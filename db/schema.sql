@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS signUp_db;
+CREATE DATABASE signUp_db;
