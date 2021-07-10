@@ -7,7 +7,7 @@
   <title>Sign Up, Idiot!</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   {{!-- <link rel="stylesheet" href="/css/jass.css"> --}}
-  <link rel="stylesheet" href="/public/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -53,20 +53,20 @@
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
-  
-  <footer class="container-fluid footer-section text-center">
-	<div class="row">
-		<p>&copy; Copyright 2021 Sign Up Idiot!</p>
-	</div>
+
+<div class="footer-margin">
+<footer class="container-fluid card-footer footer-position text-center">
+		<p>&copy; Copyright 2021 Sign Up, Idiot!</p>
   </footer>
 </div>
 
+  <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
   
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <!-- Render script for logged in users only -->
+
 </body>
 </html>
