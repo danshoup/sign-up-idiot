@@ -4,41 +4,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Project!</title>
-  <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <title>Sign Up, Idiot!</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  {{!-- <link rel="stylesheet" href="/css/jass.css"> --}}
+  <link rel="stylesheet" href="/public/css/style.css">
 </head>
 
 <body>
+    <nav class="navbar navbar-default" id="masthead">
+	<div class="container">
+  	<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    	<a class="navbar-brand" href="/" id="logo">Sign Up, Idiot!</a>
+  	</div>
+  	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav  navbar-right" id="navbar-links">
+          {{#if logged_in}}
+        <li><a href="/userDashboard" id="dashboard">Dashboard</a></li> |
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <li><a href="/signup">Create Account</a></li>
+        <li><a href="/login">Log In</a></li>
+        {{/if}}
+    	</ul>
+    </div>
+  </div>
+</div>
+</nav>
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
+        <span role="img" aria-label="logo"></span>
+        <a href="/">Sign Up, Idiot!</a>
+       <div class="col-mb-3 text-center">
+			<a href="/signup" target="_blank" class="btn btn-primary" style="background-color: #4aaaa5;" title="Sign Up Form">
+				<i class="fas fa-download" title="Sign-Up-Form"></i>
+				Sign <span class="hide-small">Up!</span>
+			  </a>
+		</div>
       </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
     </header>
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
-    <footer>
-      
-    </footer>
-  </div>
+  
+  <div class="container-fluid footer-section">
+	<div class="row">
+		<p>&copy; Copyright 2021 Sign Up Idiot!</p>
+	</div>
+    </div>
+</div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
-
 </html>
