@@ -1,11 +1,20 @@
-body {
+  :root {
+    --turquoise: #73EEDC;
+    --deepSpace: #4B6A73;
+    --teal: #58878C;
+    --black: #04030F;
+    --charcoal: #3D4C59;
+    --white: #FFFFFF;
+  }
+
+  body {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     font-size: 18px;
     line-height: 34px;
     color: #777;
     /* background: url("../images/brushed.png"); example image */
   }
-  
+
   * {
     box-sizing: border-box;
   }
