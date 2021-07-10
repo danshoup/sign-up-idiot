@@ -54,18 +54,19 @@
       {{{ body }}}
     </main>
   
-  <div class="container-fluid footer-section">
+  <footer class="container-fluid footer-section">
 	<div class="row">
 		<p>&copy; Copyright 2021 Sign Up Idiot!</p>
 	</div>
-    </div>
+  </footer>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Render script for logged in users only -->
 </body>
 </html>
