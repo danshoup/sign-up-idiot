@@ -19,12 +19,12 @@ User.belongsTo(Event, {
 });
 
 Event.hasMany(Task, {
-    foreignKey: 'id',
+    foreignKey: 'event_id',
     onDelete: 'CASCADE'
 });
 
 Task.belongsTo(Event, {
-    foreignKey: 'id'
+    foreignKey: 'event_id'
 });
 
 module.exports = { User, Event, Task };
