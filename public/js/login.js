@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
   
       if (response.ok) {
         // If successful, redirect the browser to the profile page
-        document.location.replace('/userDashboard');
+        document.location.replace('/userProfile');
       } else {
         alert(response.statusText);
       }
@@ -37,7 +37,7 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/userDashboard');
+        document.location.replace('/userProfile');
       } else {
         alert(response.statusText);
       }
