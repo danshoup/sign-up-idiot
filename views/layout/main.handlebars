@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   {{!-- <link rel="stylesheet" href="/css/jass.css"> --}}
   <link rel="stylesheet" href="../../public/css/style.css">
+
 </head>
 
 <body>
@@ -37,10 +38,10 @@
 </div>
 </nav>
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
+    <header class="display-flex justify-space-between text-center">
       <h1>
         <span role="img" aria-label="logo"></span>
-        <a href="/">Sign Up, Idiot!</a>
+        <p>Sign Up, Idiot!</p>
        <div class="col-mb-3 text-center">
 			<a href="/signup" target="_blank" class="btn btn-primary" style="background-color: #4aaaa5;" title="Sign Up Form">
 				<i class="fas fa-download" title="Sign-Up-Form"></i>
@@ -53,19 +54,20 @@
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
-  
-  <div class="container-fluid footer-section">
-	<div class="row">
-		<p>&copy; Copyright 2021 Sign Up Idiot!</p>
-	</div>
-    </div>
+
+<div class="footer-margin">
+<footer class="container-fluid card-footer footer-position text-center">
+		<p>&copy; Copyright 2021 Sign Up, Idiot!</p>
+  </footer>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </body>
 </html>

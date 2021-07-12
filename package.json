@@ -20,6 +20,7 @@
   "homepage": "https://github.com/danshoup/sign-up-idiot#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "bootstrap": "^5.0.2",
     "connect-session-sequelize": "^7.1.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
