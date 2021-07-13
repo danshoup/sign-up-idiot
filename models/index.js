@@ -2,29 +2,27 @@ const User = require('./User');
 const Event = require('./Event');
 const Task = require('./Task');
 
-Task.hasOne(User, {
-    foreignKey: 'volunteer',
+User.hasMany(Event, {
+    foreignKey: 'event_owner'
 });
 
-User.belongsTo(Task, {
-    foreignKey:'volunteer',
-});
-
-Event.hasOne(User, {
-    foreignKey: 'id'
-});
-
-User.belongsTo(Event, {
-    foreignKey: 'id'
+User.hasMany(Task, {
+    foreignKey: 'volunteer'
 });
 
 Event.hasMany(Task, {
     foreignKey: 'event_id',
+    constraints: false
+});
+
+Event.belongsTo(User, {
+    foreignKey: 'event_owner',
     onDelete: 'CASCADE'
 });
 
 Task.belongsTo(Event, {
-    foreignKey: 'event_id'
+    foreignKey: 'event_id',
+    onDelete: 'CASCADE'
 });
 
 module.exports = { User, Event, Task };
