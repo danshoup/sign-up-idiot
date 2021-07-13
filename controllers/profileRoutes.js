@@ -34,7 +34,7 @@ router.get('/', withAuth, (req, res) => {
       .then(dbEventData => {
         // serialize data before passing to template
         const events = dbEventData.map(post => post.get({ plain: true }));
-        res.render('profile', { posts, loggedIn: true });
+        res.render('profile', { events, loggedIn: true });
       })
       .catch(err => {
         console.log(err);
