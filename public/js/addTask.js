@@ -1,8 +1,8 @@
 async function taskFormHandler(event) {
     event.preventDefault();
   
-    const task_name = document.querySelector('textarea[name="task-body"]').value.trim();
-  
+    const name = document.querySelector('textarea[name="task-body"]').value.trim();
+    const volunteer = document.querySelector('input[name="volunteer"]').value;
     const event_id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
@@ -12,7 +12,8 @@ async function taskFormHandler(event) {
           method: 'POST',
           body: JSON.stringify({
             event_id,
-            task_name
+            name,
+            volunteer
           }),
           headers: {
             'Content-Type': 'application/json'
