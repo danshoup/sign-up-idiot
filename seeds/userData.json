@@ -1,0 +1,20 @@
+[
+  {
+    "first_name": "Frank",
+    "last_name": "Zappa",
+    "email": "frank@yellowsnow.com",
+    "password": "password12345"
+  },
+  {
+    "first_name": "Roger",
+    "last_name": "Waters",
+    "email": "roger@thewall.com",
+    "password": "password12345"
+  },
+  {
+    "first_name": "Paul",
+    "last_name": "McCarthy",
+    "email": "paul@isdead.com",
+    "password": "password12345"
+  }
+]

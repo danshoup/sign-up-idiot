@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Dental Floss Rodeo",
+    "event_address": "1234 Apostrophe Lane, Billings, MT 59101",
+    "event_owner": "1"
+  },
+  {
+    "name": "The Final Cut",
+    "event_address": "601 13th Streew NW, Washinton, D.C. 20005",
+    "event_owner": "2"
+  },
+  {
+    "name": "Yellow Submarine tour",
+    "event_address": "124 Conch St., Bikini Bottom, Pacific Ocean",
+    "event_owner": "3"
+  }
+]
