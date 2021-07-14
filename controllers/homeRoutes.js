@@ -48,6 +48,9 @@ router.get('/event/:id', async (req, res) => {
       ...event,
       logged_in: req.session.logged_in
     });
+
+    // res.status(200).json(event);
+    
   } catch (err) {
     res.status(500).json(err);
   }
@@ -64,10 +67,13 @@ router.get('/userProfile', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render('userProfile', {
-      ...user,
-      logged_in: true
-    });
+    // res.render('userProfile', {
+    //   ...user,
+    //   logged_in: true
+    // });
+
+    res.status(200).json(event);
+
   } catch (err) {
     res.status(500).json(err);
   }
