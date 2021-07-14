@@ -12,118 +12,54 @@
 
 <body>
 <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Sign Up, Idiot!</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link" href="#">Login</a>
-          <a class="nav-link" href="#">Signup</a>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">Sign Up, Idiot!</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+            <a class="nav-link" href="#">Login</a>
+            <a class="nav-link" href="#">Signup</a>
+            </div>
         </div>
-      </div>
-    </div>
-  </nav>
+        </div>
+    </nav>
   
-<!-- Here is the main User Profile part for the page -->
-  <main class="container container-fluid mt-5">
-    <div class="container bootdey flex-grow-1 container-p-y">
+    <main class="container container-fluid mt-5">   
+        <!-- Render the sub layout -->
+ <!-- events.handlebars -->
+        {{#each events as |event|}}
+        {{> event-details}}
+        {{/each}}
+<!-- event-details.handlebars / partial -->
+    <section class="card">
+        <a href="/events/{{id}}">
+        <header>{{event_name}}</header>
+        <img src="/images/{{images.[0].filename}}" alt="{{images.[0].description}}">
+        </a>
+        <p>Volunteer Tasks</p>
+        {{#each tasks as |task|}}
+        {{> task-details}}
+        {{/each}}
+    </section>
 
-      <div class="media align-items-center py-3 mb-3">
-        <img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="" class="d-block ui-w-100 rounded-circle">
-        <div class="media-body ml-4">
-          <h4 class="font-weight-bold mb-0">Joe Volunteer</h4>
-          <br>
-          <a href="javascript:void(0)" class="btn btn-primary btn-sm">Edit Profile</a>&nbsp;
-          <a href="javascript:void(0)" class="btn btn-default btn-sm icon-btn"><i class="fa fa-mail"></i></a>
-        </div>
-      </div>
+    
+    </main>
 
-
-      <div class="card">
-        <hr class="border-light m-0">
-        <div class="card-body">
-
-          <h6 class="mt-4 mb-3">User Profile:</h6>
-
-          <table class="table user-view-table m-0">
-            <thead>
-              <tr>
-                <th scope="col">User ID:</th>
-                <th scope="col">First Name:</th>
-                <th scope="col">Last Name:</th>
-                <th scope="col">Email:</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Joe</td>
-                <td>Volunteer</td>
-                <td>joe@volunteer.com</td>
-              </tr>
-            </tbody>
-          </table>
-
-
-          <h6 class="mt-4 mb-3">Projects Created:</h6>
-
-          <table class="table user-view-table m-0">
-            <thead>
-              <tr>
-                <th scope="col">Project ID:</th>
-                <th scope="col">Project Name:</th>
-                <th scope="col">Description:</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Red Cross</td>
-                <td>Blood Drive</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Card Games</td>
-                <td>Euchre Tournament</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Block Party</td>
-                <td>Community Pot Luck</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h6 class="mt-4 mb-3">Volunteer History:</h6>
-
-          <table class="table user-view-table m-0">
-            <thead>
-              <tr>
-                <th scope="col">Project ID:</th>
-                <th scope="col">Project Name:</th>
-                <th scope="col">Description:</th>
-                <th scope="col">Volunteer Role:</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Hootenany</td>
-                <td>Community Concert</td>
-                <td>Site Security</td>
-              </tr>
-            </tbody>
-          </table>
-
-        </div>
-      </div>
-
+    <div class="footer-margin">
+        <footer class="container-fluid card-footer footer-position text-center">
+                <p>&copy; Copyright 2021 Sign Up, Idiot!</p>
+        </footer>
     </div>
-  </main>
-  <!--end of the user Profile page  -->
+
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+  
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
