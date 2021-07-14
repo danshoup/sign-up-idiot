@@ -1,1 +1,62 @@
-cd 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up, Idiot!</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../public/css/style.css">
+</head>
+
+<body>
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">Sign Up, Idiot!</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+            <a class="nav-link" href="#">Login</a>
+            <a class="nav-link" href="#">Signup</a>
+            </div>
+        </div>
+        </div>
+    </nav>
+  
+    <main class="container container-fluid mt-5">   
+        <!-- Render the sub layout -->
+
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4">Many Hands Make Light Work...</h1>
+            <p class="lead">You've heard of that site asking geniouses to sign up for events; well, "Sign Up, Idiot!" keeps it simple!</p>
+            <hr class="my-4">
+            <p>If you need trustworthy volunteers to help with YOUR event, you can use "Sign Up, Idiot!" to make the the process as simple as possible.
+            </p>
+            <a class="btn btn-info btn-lg" href="#" role="button">Click here for a list of volunteer opportunities...</a>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="footer-margin">
+        <footer class="container-fluid card-footer footer-position text-center">
+                <p>&copy; Copyright 2021 Sign Up, Idiot!</p>
+        </footer>
+    </div>
+
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+  
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
