@@ -86,7 +86,16 @@
     color: var(--white);
     background-color: var(--teal);
   }
-  
+  /* events gallery */
+  .events {
+    flex: 4;
+    background-color: #var(--teal);
+    padding: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
   /* footer */
 
   .footer-margin {

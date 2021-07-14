@@ -29,7 +29,23 @@
   
     <main class="container container-fluid mt-5">   
         <!-- Render the sub layout -->
-        {{{ body }}}
+ <!-- events.handlebars -->
+        {{#each events as |event|}}
+        {{> event-details}}
+        {{/each}}
+<!-- event-details.handlebars / partial -->
+    <section class="card">
+        <a href="/events/{{id}}">
+        <header>{{event_name}}</header>
+        <img src="/images/{{images.[0].filename}}" alt="{{images.[0].description}}">
+        </a>
+        <p>Volunteer Tasks</p>
+        {{#each tasks as |task|}}
+        {{> task-details}}
+        {{/each}}
+    </section>
+
+    
     </main>
 
     <div class="footer-margin">
