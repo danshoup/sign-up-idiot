@@ -33,7 +33,7 @@ router.get('/', (req, res) => {
       const events = dbEventData.map(post => post.get({ plain: true }));
       res.render('homepage', {
           events,
-          loggedIn: req.session.loggedIn
+          logged_in: req.session.logged_in
         });
     })
     .catch(err => {
@@ -43,7 +43,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect('/');
     return;
   }
@@ -52,7 +52,7 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect('/');
     return;
   }
@@ -100,7 +100,7 @@ router.get('/event/:id', (req, res) => {
       // single-post Handlebar to handle single Events
       res.render('single-post', {
           event,
-          loggedIn: req.session.loggedIn
+          logged_in: req.session.logged_in
         });
     })
     .catch(err => {

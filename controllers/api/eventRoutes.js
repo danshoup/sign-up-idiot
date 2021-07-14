@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
         'event_address',
         'event_owner'
       ],
-    order: [['created_at', 'DESC']],
+    order: [['event_date', 'DESC']],
     include: [
       // Task model here -- attached user to task
       {
@@ -57,7 +57,7 @@ router.get('/:id', (req, res) => {
         attributes: ['first_name', 'last_name', 'email']
       },
       {
-        model: Comment,
+        model: Task,
         attributes: ['id', 'name', 'event_id', 'volunteer'],
         include: {
           model: User,
@@ -79,13 +79,12 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.Event('/', withAuth, (req, res) => {
+router.post('/', withAuth, (req, res) => {
   Event.create({
     name: req.body.name,
     event_date: req.body.event_date,
     event_address: req.body.event_address,
-    event_owner: req.session.event_owner,
-    user_id: req.session.user_id
+    event_owner: req.session.user_id,
   })
     .then(dbEventData => res.json(dbEventData))
     .catch(err => {
@@ -99,7 +98,7 @@ router.put('/:id', withAuth, (req, res) => {
       name: req.body.name,
       event_date: req.body.event_date,
       event_address: req.body.event_address,
-      event_owner: req.session.event_owner
+      event_owner: req.session.user_id,
     },
     {
       where: {

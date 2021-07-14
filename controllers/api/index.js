@@ -5,7 +5,7 @@ const eventRoutes = require('./eventRoutes');
 const taskRoutes = require('./taskRoutes');
 
 router.use('/users', userRoutes);
-router.use('/posts', eventRoutes);
-router.use('/comments', taskRoutes);
+router.use('/events', eventRoutes);
+router.use('/tasks', taskRoutes);
 
 module.exports = router;
