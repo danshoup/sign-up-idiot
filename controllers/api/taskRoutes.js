@@ -6,7 +6,7 @@ router.post('/', withAuth, async (req, res) => {
   try {
     const newTask = await Task.create({
       ...req.body,
-      user_id: req.session.user_id,
+      event_id: req.session.event_id,
     });
 
     res.status(200).json(newTask);
@@ -15,21 +15,25 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// router.get()
+
+// router.put()
+
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const TaskData = await Task.destroy({
+    const taskData = await Task.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
+        event_id: req.session.event_id,
       },
     });
 
-    if (!TaskData) {
+    if (!taskData) {
       res.status(404).json({ message: 'No Task found with this id!' });
       return;
     }
 
-    res.status(200).json(TaskData);
+    res.status(200).json(taskData);
   } catch (err) {
     res.status(500).json(err);
   }
