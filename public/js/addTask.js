@@ -1,4 +1,4 @@
-async function taskFormHandler(event) {
+async function newTaskFormHandler(event) {
     event.preventDefault();
   
     const name = document.querySelector('textarea[name="task-body"]').value.trim();
@@ -7,12 +7,13 @@ async function taskFormHandler(event) {
       window.location.toString().split('/').length - 1
     ];
   
-    if (task_name) {
+    if (name && volunteer && event_id) {
         const response = await fetch('/api/tasks', {
           method: 'POST',
           body: JSON.stringify({
-            event_id,
-            name
+            name,
+            volunteer,
+            event_id
           }),
           headers: {
             'Content-Type': 'application/json'
@@ -20,11 +21,11 @@ async function taskFormHandler(event) {
         });
       
         if (response.ok) {
-          document.location.reload();
+          document.location.replace('/task-details');
         } else {
           alert(response.statusText);
         }
       }
   }
   
-  document.querySelector('.task-form').addEventListener('submit', taskFormHandler);
+  document.querySelector('.task-form').addEventListener('submit', newTaskFormHandler);
