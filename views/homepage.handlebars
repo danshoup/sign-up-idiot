@@ -1,10 +1,14 @@
-        <div class="jumbotron jumbotron-fluid">
-          <div class="container">
-            <h1 class="display-4">Many Hands Make Light Work...</h1>
-            <p class="lead">You've heard of that site asking geniouses to sign up for events; well, "Sign Up, Idiot!" keeps it simple!</p>
-            <hr class="my-4">
-            <p>If you need trustworthy volunteers to help with YOUR event, you can use "Sign Up, Idiot!" to make the the process as simple as possible.
-            </p>
-            <a class="btn btn-info btn-lg" href="#" role="button">Click here for a list of volunteer opportunities...</a>
-            </div>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Many Hands Make Light Work...</h1>
+        <p class="lead">You've heard of that site asking geniouses to sign up for events; well, "Sign Up, Idiot!" keeps it simple!</p>
+        <hr class="my-4">
+        <p>If you need trustworthy volunteers to help with YOUR event, you can use "Sign Up, Idiot!" to make the the process as simple as possible. Check out the amazing volunteering opportunities below!
+        </p>
+        <div>
+            {{#each event as |event|}}
+            {{> event-details}}
+            {{/each}}
         </div>
+    </div>
+</div>

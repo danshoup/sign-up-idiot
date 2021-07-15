@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up, Idiot!</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
   
@@ -17,7 +19,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
-                <img src="/images/hands.png" width="30" height="30" class="d-inline-block align-center" alt="">
+                <img src="/images/hands.png" width="50" height="50" class="d-inline-block align-center" alt="">
                 Sign Up, Idiot!
             </a>
             <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
@@ -36,6 +38,7 @@
 
 
     <main class="container container-fluid mt-5">
+
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
@@ -48,7 +51,7 @@
 
     <!-- Render script for logged in users only -->
       {{#if logged_in}}
-      <script src="../public/js/logout.js"></script>
+      <script src="/js/logout.js"></script>
       {{/if}}
       
 
