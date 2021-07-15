@@ -12,8 +12,7 @@ async function taskFormHandler(event) {
           method: 'POST',
           body: JSON.stringify({
             event_id,
-            name,
-            volunteer
+            name
           }),
           headers: {
             'Content-Type': 'application/json'

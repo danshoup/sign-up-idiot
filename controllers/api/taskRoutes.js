@@ -6,7 +6,7 @@ router.post('/', withAuth, async (req, res) => {
   try {
     const newTask = await Task.create({
       ...req.body,
-      event_id: req.session.event_id,
+      volunteer: req.session.id
     });
 
     res.status(200).json(newTask);
@@ -24,7 +24,6 @@ router.delete('/:id', withAuth, async (req, res) => {
     const taskData = await Task.destroy({
       where: {
         id: req.params.id,
-        event_id: req.session.event_id,
       },
     });
 
