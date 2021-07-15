@@ -112,15 +112,22 @@ router.get('/userProfile', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render('profile', {
+    res.render('userProfile', {
       ...user,
       logged_in: true
     });
+
+    res.status(200).json(event);
+
 
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+
+
+
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
@@ -132,4 +139,17 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/signup', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/homepage');
+    return;
+  }
+
+  res.render('signup');
+});
+
+router.get('/task', (req, res) => {
+  res.render('task');
+});
 module.exports = router;
