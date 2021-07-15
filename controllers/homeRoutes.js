@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['event_owner'],
+          attributes: ['first_name', 'last_name'],
         },
       ],
     });
@@ -29,11 +29,11 @@ router.get('/', async (req, res) => {
 
 router.get('/event/:id', async (req, res) => {
   try {
-    const eventData = await event.findByPk(req.params.id, {
+    const eventData = await Event.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ['volunteer'],
+          attributes: ['first_name', 'last_name'],
         },
       ],
     });
@@ -48,6 +48,8 @@ router.get('/event/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+module.exports = router;
 
 // Task route -- may need to built into eventRoutes
 
