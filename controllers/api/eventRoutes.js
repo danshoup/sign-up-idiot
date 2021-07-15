@@ -1,12 +1,13 @@
 const router = require('express').Router();
 const { Event } = require('../../models');
+// const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
   try {
     const newEvent = await Event.create({
       ...req.body,
-      user_id: req.session.user_id,
+      event_owner: req.session.user_id,
     });
 
     res.status(200).json(newEvent);
@@ -15,24 +16,27 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// router.put()
+
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const EventData = await Event.destroy({
+    const eventData = await Event.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
 
-    if (!EventData) {
+    if (!eventData) {
       res.status(404).json({ message: 'No Event found with this id!' });
       return;
     }
 
-    res.status(200).json(EventData);
+    res.status(200).json(eventData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
 module.exports = router;
+
+
