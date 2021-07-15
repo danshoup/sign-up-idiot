@@ -14,41 +14,30 @@
 <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-        <a class="navbar-brand" href="#">Sign Up, Idiot!</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="/">
+                <img src="../public/images/hands.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                Sign Up, Idiot!
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-            <a class="nav-link" href="#">Login</a>
-            <a class="nav-link" href="#">Signup</a>
+            <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link" href="/signup">Signup</a>
             </div>
         </div>
         </div>
     </nav>
+
+<!-- Jumbotron -->
   
     <main class="container container-fluid mt-5">   
         <!-- Render the sub layout -->
- <!-- events.handlebars -->
-        {{#each events as |event|}}
-        {{> event-details}}
-        {{/each}}
-<!-- event-details.handlebars / partial -->
-    <section class="card">
-        <a href="/events/{{id}}">
-        <header>{{event_name}}</header>
-        <img src="/images/{{images.[0].filename}}" alt="{{images.[0].description}}">
-        </a>
-        <p>Volunteer Tasks</p>
-        {{#each tasks as |task|}}
-        {{> task-details}}
-        {{/each}}
-    </section>
-
-    
+        {{{ body }}}
     </main>
 
-    <div class="footer-margin">
+    <div class="footer-margin fixed-bottom">
         <footer class="container-fluid card-footer footer-position text-center">
                 <p>&copy; Copyright 2021 Sign Up, Idiot!</p>
         </footer>
@@ -56,7 +45,7 @@
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
-  <script src="/js/logout.js"></script>
+  <script src="../public/js/logout.js"></script>
   {{/if}}
   
 

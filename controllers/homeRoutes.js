@@ -44,12 +44,13 @@ router.get('/event/:id', async (req, res) => {
       ...event,
       logged_in: req.session.logged_in
     });
+
+    // res.status(200).json(event);
+    
   } catch (err) {
     res.status(500).json(err);
   }
 });
-
-module.exports = router;
 
 // Task route -- may need to built into eventRoutes
 
@@ -101,7 +102,7 @@ module.exports = router;
 // });
 
 // Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/userProfile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
@@ -115,6 +116,7 @@ router.get('/profile', withAuth, async (req, res) => {
       ...user,
       logged_in: true
     });
+
   } catch (err) {
     res.status(500).json(err);
   }
@@ -123,7 +125,7 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect('/userProfile');
     return;
   }
 
@@ -131,118 +133,3 @@ router.get('/login', (req, res) => {
 });
 
 module.exports = router;
-
-
-
-// const router = require('express').Router();
-// const sequelize = require('../config/connection');
-// const { Event, User, Task } = require('../models');
-// // const withAuth = require('../utils/auth');
-
-// router.get('/', (req, res) => {
-//   console.log(req.session);
-  
-//   Event.findAll({
-//     attributes: [
-//       'id',
-//       'name',
-//       'event_date',
-//       'event_address',
-//       'event_owner'
-//     ],
-//     include: [
-//       {
-//         model: Task,
-//         attributes: ['id', 'name', 'event_id', 'volunteer'],
-//         include: {
-//           model: User,
-//           attributes: ['first_name', 'last_name', 'email']
-//         }
-//       },
-//       {
-//         model: User,
-//         attributes: ['first_name', 'last_name', 'email']
-//       }
-//     ]
-//   })
-//     .then(dbEventData => {
-//       const events = dbEventData.map(post => post.get({ plain: true }));
-//       res.render('homepage', {
-//           events,
-//           logged_in: req.session.logged_in
-//         });
-//     })
-//     .catch(err => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
-
-// router.get('/login', (req, res) => {
-//   if (req.session.logged_in) {
-//     res.redirect('/');
-//     return;
-//   }
-
-//   res.render('login');
-// });
-
-// router.get('/signup', (req, res) => {
-//   if (req.session.logged_in) {
-//     res.redirect('/');
-//     return;
-//   }
-
-//   res.render('signup');
-// });
-
-// router.get('/event/:id', (req, res) => {
-//   Event.findOne({
-//     where: {
-//       id: req.params.id
-//     },
-//     attributes: [
-//       'id',
-//       'name',
-//       'event_date',
-//       'event_address',
-//       'event_owner'
-//     ],
-//     include: [
-//       {
-//         model: Task,
-//         attributes: ['id', 'name', 'event_id', 'volunteer'],
-//         include: {
-//           model: User,
-//           attributes: ['first_name', 'last_name', 'email']
-//         }
-//       },
-//       {
-//         model: User,
-//         attributes: ['first_name', 'last_name', 'email']
-//       }
-//     ]
-//   })
-//     .then(dbEventData => {
-//       if (!dbEventData) {
-//         res.status(404).json({ message: 'No event found with this id' });
-//         return;
-//       }
-
-//       // serialize the data
-//       const event = dbEventData.get({ plain: true });
-
-//       // pass data to template
-//       // single-post Handlebar to handle single Events
-//       res.render('single-post', {
-//           event,
-//           logged_in: req.session.logged_in
-//         });
-//     })
-//     .catch(err => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
-
-// module.exports = router;

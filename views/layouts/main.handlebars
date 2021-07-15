@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up, Idiot!</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/images/hands.png" width="30" height="30" class="d-inline-block align-center" alt="">
+                Sign Up, Idiot!
+            </a>
+            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
+              <ul class="nav navbar-nav  navbar-right" id="navbar-links">
+                {{#if logged_in}}
+                <li><a href="/userProfile" id="profile">User Profiile</a></li>
+                <button class="no-button" id="logout">logout</button>
+                {{else}}
+                <li><a class="nav-link" href="/login">Log In</a></li>
+                <li><a class="nav-link" href="/signup">Create Account</a></li>
+                {{/if}}
+              </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="container container-fluid mt-5">
+      <!-- Render the sub layout -->
+      {{{ body }}}
+    </main>
+
+    <div class="footer-margin fixed-bottom">
+        <footer class="container-fluid card-footer footer-position text-center">
+                <p>&copy; Copyright 2021 Sign Up, Idiot!</p>
+        </footer>
+    </div>
+
+    <!-- Render script for logged in users only -->
+      {{#if logged_in}}
+      <script src="../public/js/logout.js"></script>
+      {{/if}}
+      
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>
