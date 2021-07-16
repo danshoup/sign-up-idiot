@@ -56,7 +56,7 @@
   
   .card {
     color: var(--black);
-    background-color: var(--teal);
+    background-color: var(--white);
 
   }
   .navbar {
@@ -102,4 +102,13 @@
   .footer-margin {
     height: 100px;
   }
-  
+
+  /* FA icons */
+ 
+
+  .icon i{
+    position: absolute;
+    left: 15px;
+    top: 40px;
+    color: gray;
+  }
