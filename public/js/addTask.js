@@ -1,18 +1,16 @@
-async function newTaskFormHandler(event) {
-    event.preventDefault();
+const newTaskFormHandler = async (event) => {
+  event.preventDefault();
   
     const name = document.querySelector('textarea[name="task-body"]').value.trim();
-    const volunteer = document.querySelector('input[name="volunteer"]').value;
     const event_id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
   
-    if (name && volunteer && event_id) {
+    if (name && event_id) {
         const response = await fetch('/api/tasks', {
           method: 'POST',
           body: JSON.stringify({
             name,
-            volunteer,
             event_id
           }),
           headers: {
@@ -21,7 +19,7 @@ async function newTaskFormHandler(event) {
         });
       
         if (response.ok) {
-          document.location.replace('/task-details');
+          document.location.replace('/event-details');
         } else {
           alert(response.statusText);
         }

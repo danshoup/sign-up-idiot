@@ -1,5 +1,5 @@
-async function editEventFormHandler(event) {
-    event.preventDefault();
+const editEventFormHandler = async (event) => {
+  event.preventDefault();
   
     const name = document.querySelector('input[name="event-title"]').value;
     const event_date = document.querySelector('input[name="event_date"]').value;
@@ -21,7 +21,7 @@ async function editEventFormHandler(event) {
       });
       
       if (response.ok) {
-        document.location.replace('/event-details');
+        document.location.replace('/events');
       } else {
         alert(response.statusText);
       }

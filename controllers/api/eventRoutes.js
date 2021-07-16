@@ -7,7 +7,7 @@ router.post('/', withAuth, async (req, res) => {
   try {
     const newEvent = await Event.create({
       ...req.body,
-      event_owner: req.session.user_id,
+      event_owner: req.session.id,
     });
 
     res.status(200).json(newEvent);
