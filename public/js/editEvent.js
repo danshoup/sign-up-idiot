@@ -1,5 +1,5 @@
-async function editFormHandler(event) {
-    event.preventDefault();
+const editEventFormHandler = async (event) => {
+  event.preventDefault();
   
     const name = document.querySelector('input[name="event-title"]').value;
     const event_date = document.querySelector('input[name="event_date"]').value;
@@ -21,10 +21,10 @@ async function editFormHandler(event) {
       });
       
       if (response.ok) {
-        document.location.replace('/userProfile');
+        document.location.replace('/events');
       } else {
         alert(response.statusText);
       }
   }
   
-  document.querySelector('.edit-event-form').addEventListener('submit', editFormHandler);
+  document.querySelector('.edit-event-form').addEventListener('submit', editEventFormHandler);
