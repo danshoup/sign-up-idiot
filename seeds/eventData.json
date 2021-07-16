@@ -1,17 +1,32 @@
 [
   {
-    "name": "Dental Floss Rodeo",
-    "event_address": "1234 Apostrophe Lane, Billings, MT 59101",
+    "event_name": "Dental Floss Rodeo",
+    "event_start_date": "2021-08-02",
+    "event_end_date": "2021-08-05",
+    "event_address_line1": "1234 Apostrophe Lane",
+    "event_address_city": "Billings",
+    "event_address_state": "MT",
+    "event_address_zip": "59101",
     "event_owner": "1"
   },
   {
-    "name": "The Final Cut",
-    "event_address": "601 13th Streew NW, Washinton, D.C. 20005",
+    "event_name": "The Final Cut",
+    "event_start_date": "2021-8-9",
+    "event_end_date": "2021-8-12",
+    "event_address_line1": "601 13th Streew NW",
+    "event_address_city": "Washinton",
+    "event_address_state": "D.C.",
+    "event_address_zip": "20005",
     "event_owner": "2"
   },
   {
-    "name": "Yellow Submarine tour",
-    "event_address": "124 Conch St., Bikini Bottom, Pacific Ocean",
+    "event_name": "Yellow Submarine tour",
+    "event_start_date": "2021-08-02",
+    "event_end_date": "2021-08-02",
+    "event_address_line1": "124 Conch St.",
+    "event_address_city": "Bikini Bottom",
+    "event_address_state": "HI",
+    "event_address_zip": "90210",
     "event_owner": "3"
   }
 ]
