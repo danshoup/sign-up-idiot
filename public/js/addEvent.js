@@ -1,3 +1,5 @@
+$('#datepicker').datepicker('getDate');
+
 const newEventFormHandler = async (event) => {
   event.preventDefault();
   
