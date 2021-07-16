@@ -30,7 +30,7 @@
     <main class="container container-fluid mt-5">   
         <!-- Render the sub layout -->
         <div class="container d-flex justify-content-center">
-            <form>
+            <form class="new-event-form">
 
                 <div class="row" style="margin-bottom: 30px;">
                     <div class="twelve columns" style="text-align: center;">
@@ -42,16 +42,12 @@
                 <div class="form-row">
                   <div class="form-group col-md-12">
                     <label for="inputEvent">Event Name</label>
-                    <input type="text" class="form-control" id="inputEventName">
+                    <input type="text" class="form-control" id="event-name">
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputAddress">Address</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                </div>
-                <div class="form-group">
-                  <label for="inputAddress2">Address 2</label>
-                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                  <input type="text" class="form-control" id="event-address" placeholder="1234 Main St">
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
@@ -121,23 +117,73 @@
                     <input type="text" class="form-control" id="inputZip">
                   </div>
                 </div>
+                
                 <div class="form-row mt-3">
                     <div class="form-group col-md-6">
-                        <div id="date-picker-start" class="md-form md-outline input-with-post-icon datepicker">
+                        <div id="date-picker-start" class="md-form md-outline input-with-post-icon datepicker" inline="true">
                             <label for="example">Event Start Date...</label>
-                            <input placeholder="Select start date" type="text" id="eventStart" class="form-control">
-                            <i class="fas fa-calendar input-prefix" tabindex=0></i>
+                            <input placeholder="Select start date" type="text" data-provide="datepicker" id="eventStart" class="form-control">
+                            <i class="fas fa-calendar input-prefix" aria-hidden="true"></i>
                           </div>
                     </div>
                     <div class="form-group col-md-6">
-                        <div id="date-picker-end" class="md-form md-outline input-with-post-icon datepicker">
+                        <div id="date-picker-end" class="md-form md-outline input-with-post-icon datepicker" inline="true">
                             <label for="example">Event End Date...</label>
                             <input placeholder="Select end date" type="text" id="eventEnd" class="form-control">
-                            <i class="fas fa-calendar input-prefix" tabindex=0></i>
+                            <i class="fas fa-calendar input-prefix" aria-hidden="true"></i>
                           </div>
                     </div>
-
                 </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                      <label for="inputStartMonth">Start Month</label>
+                      <select id="inputStartDay" class="form-control">
+                        <option selected>Month...</option>
+                        <option>...</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                      <label for="inputStartDay">Start Day</label>
+                      <select id="inputStartDay" class="form-control">
+                        <option selected>Day...</option>
+                        <option>...</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                      <label for="inputStartYear">Start Year</label>
+                      <select id="inputStartDay" class="form-control">
+                        <option selected>Year...</option>
+                        <option>...</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-2">
+                      <label for="inputEndMonth">End Month</label>
+                      <select id="inputStartDay" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                      <label for="inputEndDay">End Day</label>
+                      <select id="inputEndDay" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                      <label for="inputEndYear">End Year</label>
+                      <select id="inputStartDay" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                      </select>
+                    </div>
+
+                  </div>
+
+
+
                 <button type="submit" class="btn btn-primary">Create Event</button>
             </form>            
         </div>
@@ -151,14 +197,12 @@
         </footer>
     </div>
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+
   
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </body>
 </html>
