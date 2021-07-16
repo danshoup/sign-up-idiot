@@ -11,18 +11,36 @@ Event.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        name: {
+        event_name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        event_date: {
+        event_start_date: {
             type: DataTypes.DATE,
             allowNull: false,
-            // Want to see how this looks, may remove it.
-            defaultValue: DataTypes.NOW,
         },
-        event_address: {
+        event_end_date: {
+            type: DataTypes.DATE,
+            allowNull: false,
+        },
+        event_address_line1: {
             type: DataTypes.STRING,
+            allowNull: false, 
+        },
+        event_address_line2: {
+            type: DataTypes.STRING,
+            allowNull: true, 
+        },
+        event_address_city: {
+            type: DataTypes.STRING,
+            allowNull: false, 
+        },
+        event_address_state: {
+            type: DataTypes.STRING,
+            allowNull: false, 
+        },
+        event_address_zip: {
+            type: DataTypes.INTEGER,
             allowNull: false, 
         },
         event_owner: {
