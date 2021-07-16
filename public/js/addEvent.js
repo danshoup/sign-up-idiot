@@ -1,3 +1,5 @@
+$('#datepicker').datepicker('getDate');
+
 async function newFormHandler(event) {
     event.preventDefault();
   
