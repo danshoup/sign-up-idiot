@@ -40,7 +40,7 @@ router.get('/event/:id', async (req, res) => {
 
     const event = eventData.get({ plain: true });
 
-    res.render('events', {
+    res.render('event', {
       ...event,
       logged_in: req.session.logged_in
     });
