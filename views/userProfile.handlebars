@@ -4,7 +4,7 @@
       <div class="media align-items-center py-3 mb-3">
         <img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="" class="d-block ui-w-100 rounded-circle">
         <div class="media-body ml-4">
-          <h4 class="font-weight-bold mb-0">Joe Volunteer</h4>
+          <h4 class="font-weight-bold mb-0">{{first_name}} {{last_name}}</h4>
           <br>
           <a href="javascript:void(0)" class="btn btn-primary btn-sm">Edit Profile</a>&nbsp;
           <a href="javascript:void(0)" class="btn btn-default btn-sm icon-btn"><i class="fa fa-mail"></i></a>
@@ -29,10 +29,10 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row">1</th>
-                <td>Joe</td>
-                <td>Volunteer</td>
-                <td>joe@volunteer.com</td>
+                <td scope="row">{{id}}</td>
+                <td>{{first_name}}</td>
+                <td>{{last_name}}</td>
+                <td>{{email}}</td>
               </tr>
             </tbody>
           </table>
@@ -45,70 +45,55 @@
                   <tr>
                     <th scope="col">Project ID:</th>
                     <th scope="col">Project Name:</th>
-                    <th scope="col">Description:</th>
+                    <th scope="col">Event Date:</th>
                     <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>
+                  {{#each events as |event|}}
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Red Cross</td>
-                    <td>Blood Drive</td>
+                    <td scope="row">{{event.id}}</td>
+                    <td>{{event.event_name}}</td>
+                    <td>{{format_date event.event_start_date}}</td>
                     <td>
                       <i class="fa fa-pencil" aria-hidden="true"></i>
                       <i class="fa fa-trash-o" aria-hidden="true"></i>
                     </td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Card Games</td>
-                    <td>Euchre Tournament</td>
-                    <td>
-                      <i class="fa fa-pencil" aria-hidden="true"></i>
-                      <i class="fa fa-trash-o" aria-hidden="true"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Block Party</td>
-                    <td>Community Pot Luck</td>
-                    <td>
-                      <i class="fa fa-pencil" aria-hidden="true"></i>
-                      <i class="fa fa-trash-o" aria-hidden="true"></i>
-                    </td>
-                  </tr>
+                  {{/each}}
                 </tbody>
               </table>
     
-              <h6 class="mt-4 mb-3">Volunteer History:</h6>
-    
+              <h6 class="mt-4 mb-3">Volunteer Tasks:</h6>
+                  {{#each events as |event|}}
+                  <h7>Event: {{event.event_name}} starting on {{format_date event.event_start_date}} located at {{event.event_address_line1}}, {{event.event_address_city}}, {{event.event_address_state}} {{event.event_address_zip}}</h7>    
               <table class="table user-view-table m-0">
                 <thead>
                   <tr>
-                    <th scope="col">Project ID:</th>
-                    <th scope="col">Project Name:</th>
-                    <th scope="col">Description:</th>
+                    <th scope="col">Task ID:</th>
                     <th scope="col">Volunteer Role:</th>
                     <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>
+
+                  {{#each tasks as |task|}}
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Hootenany</td>
-                    <td>Community Concert</td>
-                    <td>Site Security</td>
+                    <td scope="row">{{task.id}}</td>
+                    <td>{{task.name}}</td>
                     <td>
                       <i class="fa fa-pencil" aria-hidden="true"></i>
                       <i class="fa fa-trash-o" aria-hidden="true"></i>
                     </td>
+                    {{/each}}
+
                   </tr>
                 </tbody>
               </table>
-
+                    {{/each}}
         </div>
       </div>
-
+  
     </div>
-    
-    <script src="/js/login.js"></script>
+
+    {{!-- <script src="/js/login.js"></script> --}}
