@@ -158,6 +158,7 @@ router.get('/userProfile', withAuth, async (req, res) => {
           'event_address_state',
           'event_address_zip',
          ],
+
         },
         {
           model: Task,
@@ -179,10 +180,21 @@ router.get('/userProfile', withAuth, async (req, res) => {
                 'event_address_state',
                 'event_address_zip',
               ],
-            }
-          ]
-        }
-      ]
+
+            include: [
+              {
+                model: User,
+                attributes: [
+                  'id',
+                  'first_name',
+                  'last_name'
+                ],
+               },
+            ],
+            },
+          ],
+        },
+      ],
     });
 
     // Serialize data so the template can read it
