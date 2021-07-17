@@ -77,12 +77,12 @@ router.get('/event/:id', async (req, res) => {
 
     const event = eventData.get({ plain: true });
 
-    res.render('event', {
-      ...event,
-      logged_in: req.session.logged_in
-    });
+    // res.render('event', {
+    //   ...event,
+    //   logged_in: req.session.logged_in
+    // });
 
-    // res.status(200).json(event);
+    res.status(200).json(event);
     
   } catch (err) {
     res.status(500).json(err);
