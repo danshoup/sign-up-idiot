@@ -1,5 +1,5 @@
-async function deleteFormHandler(event) {
-    event.preventDefault();
+const deleteEventFormHandler = async (event) => {
+  event.preventDefault();
     
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
@@ -16,11 +16,11 @@ async function deleteFormHandler(event) {
       });
       
       if (response.ok) {
-        document.location.replace('/userProfile');
+        document.location.replace('/events');
       } else {
         alert(response.statusText);
       }
     
   }
   
-  document.querySelector('.delete-event-btn').addEventListener('click', deleteFormHandler);
+  document.querySelector('.delete-event-btn').addEventListener('click', deleteEventFormHandler);
