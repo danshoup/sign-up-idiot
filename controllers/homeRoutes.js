@@ -64,6 +64,15 @@ router.get('/event/:id', async (req, res) => {
           attributes: ['first_name', 'last_name'],
         },
       ],
+      include: [ 
+        {
+          model: Task,
+          attributes: [
+            'id',
+            'name',
+          ],
+        },
+      ],
     });
 
     const event = eventData.get({ plain: true });
