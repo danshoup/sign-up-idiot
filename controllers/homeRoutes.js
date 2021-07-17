@@ -22,6 +22,34 @@ router.get('/', async (req, res) => {
       events, 
       logged_in: req.session.logged_in 
     });
+
+    // res.status(200).json(events);
+
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/events', async (req, res) => {
+  try {
+    // Get all events and JOIN with user data
+    const eventData = await Event.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['first_name', 'last_name'],
+        },
+      ],
+    });
+
+    // Serialize data so the template can read it
+    const events = eventData.map((event) => event.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('events', { 
+      events, 
+      logged_in: req.session.logged_in 
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -40,7 +68,7 @@ router.get('/event/:id', async (req, res) => {
 
     const event = eventData.get({ plain: true });
 
-    res.render('events', {
+    res.render('event', {
       ...event,
       logged_in: req.session.logged_in
     });
@@ -105,19 +133,68 @@ router.get('/event/:id', async (req, res) => {
 router.get('/userProfile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Event }],
+    // const userData = await User.findByPk(req.session.user_id, {
+    //   attributes: { exclude: ['password'] },
+    //   // include: [{ model: Event }],
+    // });
+
+    // Get all of the tasks and events associated with the current user
+    console.log(`req.session.id = ${req.session.user_id}`);
+    const userData = await User.findAll({
+      where: {
+          id: req.session.user_id,
+      },
+      include: [
+        {model: Event,
+        attributes: [
+          'id',
+          'event_owner',
+          'event_name', 
+          'event_start_date', 
+          'event_end_date',
+          'event_address_line1',
+          'event_address_line2',
+          'event_address_city',
+          'event_address_state',
+          'event_address_zip',
+         ],
+        },
+        {
+          model: Task,
+          attributes: [
+            'id',
+            'name', 
+          ],
+          include: [
+            {model: Event,
+              attributes: [
+                'id',
+                'event_owner',
+                'event_name', 
+                'event_start_date', 
+                'event_end_date',
+                'event_address_line1',
+                'event_address_line2',
+                'event_address_city',
+                'event_address_state',
+                'event_address_zip',
+              ],
+            }
+          ]
+        }
+      ]
     });
 
-    const user = userData.get({ plain: true });
+    // Serialize data so the template can read it
+    // const users = userData.map((task) => task.get({ plain: true }));
+    const users = userData[0].get({ plain: true });
 
     res.render('userProfile', {
-      ...user,
+      ...users,
       logged_in: true
     });
 
-    res.status(200).json(event);
+    // res.status(200).json({...users, logged_in: true});
 
 
   } catch (err) {
