@@ -1,126 +1,138 @@
-// Data Picker Initialization
-// $('.datepicker').datepicker({
-// 	inline, true
-//   });
+$('#sandbox-container .input-group.date').datepicker({
+    autoclose: true,
+    todayHighlight: true,
+    toggleActive: true,
+	format: 'mm/dd/yyyy',
+    startDate: '+0d'
+});
 
-// Strings and translations
-monthsFull; ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
-'November', 'December'],
-monthsShort; ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-weekdaysFull; ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-weekdaysShort; ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-showMonthsShort; undefined,
-showWeekdaysFull; undefined,
+const datepicker = $.fn.datepicker.noConflict(); // return $.fn.datepicker to previously assigned value
+$.fn.bootstrapDP = datepicker; // give $().bootstrapDP the bootstrap-datepicker functionality
 
-// Buttons
-today; 'Today',
-clear; 'Clear',
-close; 'Close',
 
-// Accessibility labels
-labelMonthNext; 'Next month',
-labelMonthPrev; 'Previous month',
-labelMonthSelect; 'Select a month',
-labelYearSelect; 'Select a year',
 
-// Formats
-format; 'd mmmm, yyyy',
-formatSubmit; undefined,
-hiddenPrefix; undefined,
-hiddenSuffix; '_submit',
-hiddenName; undefined,
+// // $('.datepicker').datepicker({
+// // 	inline, true
+// //   });
 
-// Editable input
-editable; undefined,
+// // Strings and translations
+// monthsFull; ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+// 'November', 'December'],
+// // monthsShort; ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+// // weekdaysFull; ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+// weekdaysShort; ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+// // showMonthsShort; undefined,
+// // showWeekdaysFull; undefined,
 
-// Dropdown selectors
-selectYears; undefined,
-selectMonths; undefined,
+// // Buttons
+// today; 'Today',
+// clear; 'Clear',
+// close; 'Close',
 
-// First day of the week
-firstDay; undefined,
+// // Accessibility labels
+// labelMonthNext; 'Next month',
+// labelMonthPrev; 'Previous month',
+// labelMonthSelect; 'Select a month',
+// labelYearSelect; 'Select a year',
 
-// Date limits
-min; undefined,
-max; undefined,
+// // Formats
+// format; 'd mmmm, yyyy',
+// formatSubmit; undefined,
+// hiddenPrefix; undefined,
+// hiddenSuffix; '_submit',
+// hiddenName; undefined,
 
-// Disable dates
-disable; undefined,
+// // Editable input
+// // editable; undefined,
 
-// Root picker container
-container; undefined,
+// // Dropdown selectors
+// selectYears; undefined,
+// selectMonths; undefined,
 
-// Hidden input container
-containerHidden; undefined,
+// // First day of the week
+// firstDay; 0,
 
-// Close on a user action
-closeOnSelect; true,
-closeOnClear; true,
+// // Date limits
+// min; today,
+// // max; undefined,
 
-// Events
-onStart; undefined,
-onRender; undefined,
-onOpen; undefined,
-onClose; undefined,
-onSet; undefined,
-onStop; undefined,
+// // Disable dates
+// // disable; undefined,
 
-// Classes
-klass; {
+// // Root picker container
+// container; undefined,
 
-// The element states
-input; 'picker__input',
-active; 'picker__input--active',
+// // Hidden input container
+// containerHidden; undefined,
 
-// The root picker and states *
-picker; 'picker',
-opened; 'picker--opened',
-focused; 'picker--focused',
+// // Close on a user action
+// closeOnSelect; true,
+// closeOnClear; true,
 
-// The picker holder
-holder; 'picker__holder',
+// // Events
+// onStart; undefined,
+// onRender; undefined,
+// onOpen; undefined,
+// onClose; undefined,
+// onSet; undefined,
+// onStop; undefined,
 
-// The picker frame, wrapper, and box
-frame; 'picker__frame',
-wrap; 'picker__wrap',
-box; 'picker__box',
+// // Classes
+// // klass; {
 
-// The picker header
-header; 'picker__header',
+// // The element states
+// input; 'picker__input',
+// active; 'picker__input--active',
 
-// Month navigation
-navPrev; 'picker__nav--prev',
-navNext; 'picker__nav--next',
-navDisabled; 'picker__nav--disabled',
+// // The root picker and states *
+// picker; 'picker',
+// opened; 'picker--opened',
+// focused; 'picker--focused',
 
-// Month & year labels
-month; 'picker__month',
-year; 'picker__year',
+// // The picker holder
+// holder; 'picker__holder',
 
-// Month & year dropdowns
-selectMonth; 'picker__select--month',
-selectYear; 'picker__select--year',
+// // The picker frame, wrapper, and box
+// frame; 'picker__frame',
+// wrap; 'picker__wrap',
+// box; 'picker__box',
 
-// Table of dates
-table; 'picker__table',
+// // The picker header
+// header; 'picker__header',
 
-// Weekday labels
-weekdays; 'picker__weekday',
+// // Month navigation
+// navPrev; 'picker__nav--prev',
+// navNext; 'picker__nav--next',
+// navDisabled; 'picker__nav--disabled',
 
-// Day states
-day; 'picker__day',
-disabled; 'picker__day--disabled',
-selected; 'picker__day--selected',
-highlighted; 'picker__day--highlighted',
-now; 'picker__day--today',
-infocus; 'picker__day--infocus',
-outfocus; 'picker__day--outfocus',
+// // Month & year labels
+// month; 'picker__month',
+// year; 'picker__year',
 
-// The picker footer
-footer; 'picker__footer',
+// // Month & year dropdowns
+// selectMonth; 'picker__select--month',
+// selectYear; 'picker__select--year',
 
-// Today, clear, & close buttons
-buttonClear; 'picker__button--clear',
-buttonClose; 'picker__button--close',
-buttonToday; 'picker__button--today'
-}
+// // Table of dates
+// table; 'picker__table',
+
+// // Weekday labels
+// weekdays; 'picker__weekday',
+
+// // Day states
+// day; 'picker__day',
+// disabled; 'picker__day--disabled',
+// selected; 'picker__day--selected',
+// highlighted; 'picker__day--highlighted',
+// now; 'picker__day--today',
+// infocus; 'picker__day--infocus',
+// outfocus; 'picker__day--outfocus',
+
+// // The picker footer
+// footer; 'picker__footer',
+
+// // Today, clear, & close buttons
+// buttonClear; 'picker__button--clear',
+// buttonClose; 'picker__button--close',
+// buttonToday; 'picker__button--today'
+// // }
