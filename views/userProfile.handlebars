@@ -65,12 +65,13 @@
               </table>
     
               <h6 class="mt-4 mb-3">Volunteer Tasks:</h6>
-                  {{#each events as |event|}}
-                  <h7>Event: {{event.event_name}} starting on {{format_date event.event_start_date}} located at {{event.event_address_line1}}, {{event.event_address_city}}, {{event.event_address_state}} {{event.event_address_zip}}</h7>    
+    
               <table class="table user-view-table m-0">
                 <thead>
                   <tr>
-                    <th scope="col">Task ID:</th>
+                    <th scope="col">Event ID:</th>
+                    <th scope="col">Event Name:</th>
+                    <th scope="col">Event Owner:</th>
                     <th scope="col">Volunteer Role:</th>
                     <th scope="col"></th>
                   </tr>
@@ -79,18 +80,19 @@
 
                   {{#each tasks as |task|}}
                   <tr>
-                    <td scope="row">{{task.id}}</td>
+                    <td scope="row">{{task.event.id}}</td>
+                    <td>{{task.event.event_name}}</td>
+                    <td>{{task.event.event_owner}}</td>
                     <td>{{task.name}}</td>
                     <td>
                       <i class="fa fa-pencil" aria-hidden="true"></i>
                       <i class="fa fa-trash-o" aria-hidden="true"></i>
                     </td>
                     {{/each}}
-
                   </tr>
                 </tbody>
               </table>
-                    {{/each}}
+
         </div>
       </div>
   

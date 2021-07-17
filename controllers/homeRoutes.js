@@ -164,6 +164,22 @@ router.get('/userProfile', withAuth, async (req, res) => {
           attributes: [
             'id',
             'name', 
+          ],
+          include: [
+            {model: Event,
+              attributes: [
+                'id',
+                'event_owner',
+                'event_name', 
+                'event_start_date', 
+                'event_end_date',
+                'event_address_line1',
+                'event_address_line2',
+                'event_address_city',
+                'event_address_state',
+                'event_address_zip',
+              ],
+            }
           ]
         }
       ]
