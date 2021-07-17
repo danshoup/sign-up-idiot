@@ -70,6 +70,7 @@ router.get('/event/:id', async (req, res) => {
           attributes: [
             'id',
             'name',
+            'event_id',
           ],
         },
       ],
