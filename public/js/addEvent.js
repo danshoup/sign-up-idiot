@@ -1,4 +1,4 @@
-const newEventFormHandler = async (event) => {
+const newFormHandler = async (event) => {
   event.preventDefault();
 
     // Connects with newEvent.handlebars
@@ -37,4 +37,4 @@ const newEventFormHandler = async (event) => {
   }
 };
   
-  document.querySelector('.new-event-form').addEventListener('submit', newEventFormHandler);
+  document.querySelector('.new-event-form').addEventListener('submit', newFormHandler);

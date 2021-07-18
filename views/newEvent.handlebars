@@ -6,9 +6,9 @@
         <h1 class="h3 mb-3 font-weight-normal"></h1>Create an Event</h1>
           <p>Your first steps to creating your event begin with these few questions. You'll be on your way to securing new volunteers in no time!</p>
           <label for="inputEventName" class="sr-only">Event Name:</label>
-          <input type="text" id="inputEventName" class="form-control mb-3 mb-3" placeholder="Event Name">
+          <input type="text" id={{event_name}} class="form-control mb-3 mb-3" placeholder="Event Name">
           <label for="inputAddress" class="sr-only">Address:</label>
-          <input type="text" id="inputAddress" class="form-control mb-3 mb-3" placeholder="Address">
+          <input type="text" id={{event_address_line1}} class="form-control mb-3 mb-3" placeholder="Address">
           <label for="inputAddress2" class="sr-only">Address 2:</label>
           <input type="text" id="inputAddress2" class="form-control mb-3 mb-3" placeholder="Address 2">
           <label for="inputCity" class="sr-only">City:</label>
@@ -98,7 +98,7 @@
 </div>
 
 <script src="/js/datepicker.js"></script>
-<script src="/js/addEvent.js"></script>
+{{!-- <script src="/js/addEvent.js"></script> --}}
 
 
   {{!-- <div class="row" style="margin-bottom: 30px;">
@@ -130,21 +130,4 @@
             <input type="text" class="form-control" id="inputZip">
           </div> --}}
 
-              {{!-- date-picker --}}
-        {{!-- <div class="form-row mt-3">
-            <div class="form-group col-md-6">
-              <div id="date-picker-start" class="md-form md-outline input-with-post-icon datepicker" inline="true">
-                <input placeholder="Select start date" type="text" id="eventStart" class="form-control"> --}}
-                 {{!-- <button type="submit" class="Today">Today</button> --}}
-                {{!-- <label for="eventStart">Start Date</label>
-                <i class="fas fa-calendar input-prefix"></i>
-              </div>
-        </div>
-            <div class="form-group col-md-6">
-              <div id="date-picker-end" class="md-form md-outline input-with-post-icon datepicker" inline="true">
-                <input placeholder="Select end date" type="text" id="eventEnd" class="form-control">
-                <label for="eventEnd">End Date</label>
-                <i class="fas fa-calendar input-prefix"></i>
-              </div>
-            </div>
-        </div> --}}
+          

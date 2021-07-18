@@ -1,4 +1,4 @@
-const editEventFormHandler = async (event) => {
+const editFormHandler = async (event) => {
   event.preventDefault();
   
     const name = document.querySelector('input[name="event-title"]').value;
@@ -27,4 +27,4 @@ const editEventFormHandler = async (event) => {
       }
   }
   
-  document.querySelector('.edit-event-form').addEventListener('submit', editEventFormHandler);
+  document.querySelector('.edit-event-form').addEventListener('submit', editFormHandler);
