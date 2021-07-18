@@ -248,6 +248,36 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+router.get('/newEvent', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/event-details');
+    return;
+  }
+
+  res.render('newEvent');
+});
+
+router.get('/event-details', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/task-details');
+    return;
+  }
+
+  res.render('event-details');
+});
+
+router.get('/task-details', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/event-details');
+    return;
+  }
+
+  res.render('task-details');
+});
+
 router.get('/task', (req, res) => {
   res.render('task');
 });
