@@ -251,34 +251,34 @@ router.get('/signup', (req, res) => {
 router.get('/newEvent', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/event-details');
+    res.render('/event');
     return;
   }
 
   res.render('newEvent');
 });
 
-router.get('/event-details', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/task-details');
-    return;
-  }
+// router.get('/event-details', (req, res) => {
+//   // If the user is already logged in, redirect the request to another route
+//   if (req.body.event) {
+//     res.render('/task-details');
+//     return;
+//   }
 
-  res.render('event-details');
-});
+//   res.render('event-details');
+// });
 
-router.get('/task-details', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/event-details');
-    return;
-  }
+// router.get('/task-details', (req, res) => {
+//   // If the user is already logged in, redirect the request to another route
+//   if (req.body.event_id) {
+//     res.redirect('/event-details');
+//     return;
+//   }
 
-  res.render('task-details');
-});
+//   res.render('task-details');
+// });
 
-router.get('/task', (req, res) => {
-  res.render('task');
-});
+// router.get('/task', (req, res) => {
+//   res.render('task');
+// });
 module.exports = router;
