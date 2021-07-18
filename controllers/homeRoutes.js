@@ -278,7 +278,7 @@ router.get('/newEvent', (req, res) => {
 //   res.render('task-details');
 // });
 
-// router.get('/task', (req, res) => {
-//   res.render('task');
-// });
+router.get('/task', (_req, res) => {
+  res.render('task');
+});
 module.exports = router;
