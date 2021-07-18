@@ -6,18 +6,24 @@ User.hasMany(Event, {
     foreignKey: 'event_owner'
 });
 
+Event.belongsTo(User, {
+    as: 'event_creator',
+    foreignKey: 'event_owner',
+    onDelete: 'CASCADE'
+});
+
 User.hasMany(Task, {
+    foreignKey: 'volunteer'
+});
+
+Task.belongsTo(User, {
+    as: 'task_volunteer', 
     foreignKey: 'volunteer'
 });
 
 Event.hasMany(Task, {
     foreignKey: 'event_id',
     constraints: false
-});
-
-Event.belongsTo(User, {
-    foreignKey: 'event_owner',
-    onDelete: 'CASCADE'
 });
 
 Task.belongsTo(Event, {
