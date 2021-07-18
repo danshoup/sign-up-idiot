@@ -1,33 +1,19 @@
  <!-- Event information form -->
-  <div class="container d-flex justify-content-center">
-    <form class="new-event-form">
-        <div class="row" style="margin-bottom: 30px;">
-            <div class="twelve columns" style="text-align: center;">
-            <h2>Create an Event</h2>
-            <p>Your first steps to creating your event begin with these few questions. You'll be on your way to securing new volunteers in no time!</p>
-            
-            </div>
-        </div>
-    
-        <div class="form-row">
-          <div class="form-group col-md-12">
-            <label for="inputEventName">Event Name</label>
-            <input type="text" class="form-control" id="inputEventName">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="inputAddress">Address</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-        </div>
-        <div class="form-group">
-          <label for="inputAddress2">Address 2</label>
-          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="inputCity">
-          </div>
+  {{!-- <div class="container d-flex justify-content-center"> --}}
+    <div class="text-center mt-5">
+    <form class="new-event-form" style="max-width:480px; margin:auto;">
+       <img class="mt-4 mb-4" src="SignUp.png" height="100" alt="Sign Up Logo">
+        <h1 class="h3 mb-3 font-weight-normal"></h1>Create an Event</h1>
+          <p>Your first steps to creating your event begin with these few questions. You'll be on your way to securing new volunteers in no time!</p>
+          <label for="inputEventName" class="sr-only">Event Name:</label>
+          <input type="text" id="inputEventName" class="form-control mb-3 mb-3" placeholder="Event Name">
+          <label for="inputAddress" class="sr-only">Address:</label>
+          <input type="text" id="inputAddress" class="form-control mb-3 mb-3" placeholder="Address">
+          <label for="inputAddress2" class="sr-only">Address 2:</label>
+          <input type="text" id="inputAddress2" class="form-control mb-3 mb-3" placeholder="Address 2">
+          <label for="inputCity" class="sr-only">City:</label>
+          <input type="text" id="inputCity" class="form-control mb-3 mb-3" placeholder="City">
+
           <div class="form-group col-md-4">
             <label for="inputState">State</label>
             <select id="inputState" class="form-control">
@@ -86,10 +72,8 @@
               <option value="WY">Wyoming</option> 
             </select>
           </div>
-          <div class="form-group col-md-2">
-            <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
-          </div>
+          <label for="inputZip" class="sr-only">Zip Code:</label>
+          <input type="text" id="inputZip" class="form-control mb-3 mb-3" placeholder="Zip Code">
         </div>
 
         {{!-- date-picker2 --}}
@@ -104,8 +88,49 @@
           <label for="eventEnd">End Date</label>
           <span class="input-group-addon"><i class="fa fa-calendar-o fa-fw"></i></span>
         </div>
+
         
-        {{!-- date-picker --}}
+        <!-- 'Create Event button' -->
+      <div class="container d-flex justify-content-center">
+        <button type="submit" class="btn-lg btn-primary mt-5">Create Event</button>
+      </div>
+    </form>            
+</div>
+
+<script src="/js/datepicker.js"></script>
+<script src="/js/addEvent.js"></script>
+
+
+  {{!-- <div class="row" style="margin-bottom: 30px;">
+  <div class="twelve columns" style="text-align: center;"> --}}
+  {{!-- <h2>Create an Event</h2> --}}
+  {{!-- </div>
+</div> --}}
+  {{!-- <div class="form-row">
+          <div class="form-group col-md-12"> --}}
+         {{!-- </div>
+        </div> --}}
+            {{!-- <label for="inputEventName">Event Name</label> --}}
+            {{!-- <input type="text" class="form-control" id="inputEventName"> --}}
+        {{!-- <div class="form-group">
+          <label for="inputAddress">Address</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        </div> --}}
+        {{!-- <div class="form-group">
+          <label for="inputAddress2">Address 2</label>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        </div> --}}
+        {{!-- <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="inputCity">
+          </div> --}}
+          {{!-- <div class="form-group col-md-2">
+            <label for="inputZip">Zip</label>
+            <input type="text" class="form-control" id="inputZip">
+          </div> --}}
+
+              {{!-- date-picker --}}
         {{!-- <div class="form-row mt-3">
             <div class="form-group col-md-6">
               <div id="date-picker-start" class="md-form md-outline input-with-post-icon datepicker" inline="true">
@@ -123,14 +148,3 @@
               </div>
             </div>
         </div> --}}
-
-        
-        <!-- 'Create Event button' -->
-      <div class="container d-flex justify-content-center">
-        <button type="submit" class="btn-lg btn-primary mt-5">Create Event</button>
-      </div>
-    </form>            
-</div>
-
-<script src="/js/datepicker.js"></script>
-<script src="/js/addEvent.js"></script>
