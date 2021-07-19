@@ -9,12 +9,12 @@ router.get('/:id', withAuth, async (req, res) => {
 
     const event = eventData.get({ plain: true });
 
-    // res.render('editEvent', {
-    //   ...event,
-    //   logged_in: true
-    // });
+    res.render('editEvent', {
+      ...event,
+      logged_in: true
+    });
 
-    res.status(200).json(event);
+    // res.status(200).json(event);
     
   } catch (err) {
     res.status(500).json(err);
