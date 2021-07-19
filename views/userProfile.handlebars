@@ -6,7 +6,7 @@
         <div class="media-body ml-4">
           <h4 class="font-weight-bold mb-0">{{first_name}} {{last_name}}</h4>
           <br>
-          <a href="javascript:void(0)" class="btn btn-primary btn-sm">Edit Profile</a>&nbsp;
+          <a href="javascript:void(0)" class="edit-profile-btn btn btn-primary btn-sm">Edit Profile</a>&nbsp;
           <a href="javascript:void(0)" class="btn btn-default btn-sm icon-btn"><i class="fa fa-mail"></i></a>
         </div>
       </div>
@@ -56,8 +56,10 @@
                     <a href="/event/{{event.id}}"><td>{{event.event_name}}</td></a>
                     <td>{{format_date event.event_start_date}}</td>
                     <td>
+
                       <a class="editEvent" id="edit{{event.id}}" href=""><i class="fa fa-pencil" aria-hidden="true"></i></a>
                       <button type="button" class="btn btn-link ml-1 deleteEvent" id="delete{{event.id}}" href=""><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+
                     </td>
                   </tr>
                   {{/each}}
@@ -85,7 +87,7 @@
                     <td>{{task.event.event_creator.first_name}} {{task.event.event_creator.last_name}}</td>
                     <td>{{task.name}}</td>
                     <td>
-                      <a class="deleteVolunteerTask" id="delete{{task.event.id}}" href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                      <a class="deleteVolunteerTask" data-task="{{task.event.id}}" href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                     </td>
                     {{/each}}
                   </tr>
@@ -96,4 +98,3 @@
       </div>
   
     </div>
-

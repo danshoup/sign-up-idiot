@@ -28,7 +28,13 @@ router.post('/', withAuth, async (req, res) => {
       event_owner: req.session.user_id,
     });
 
-    res.status(200).json(newEvent);
+    const event = newEvent.get({ plain: true });
+
+    res.render('event', {
+      ...newEvent,
+      logged_in: true
+    });
+  //  res.status(200).json(newEvent);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -38,7 +44,6 @@ router.put('/:id', withAuth, async (req, res) => {
   try {
     const eventData = await Event.update({
       ...req.body,
-      event_owner: req.session.user_id
     },
     {
       where: {
@@ -51,7 +56,14 @@ router.put('/:id', withAuth, async (req, res) => {
       return;
     }
 
-    res.status(200).json(eventData);
+    const event = eventData.get({ plain: true });
+
+    res.render('event', {
+      ...req.body,
+      logged_in: true
+    });
+
+    // res.status(200).json(event);
 
   } catch (err) {
     res.status(400).json(err);
@@ -69,9 +81,14 @@ router.delete('/:id', withAuth, async (req, res) => {
     if (!eventData) {
       res.status(404).json({ message: 'No Event found with this id!' });
       return;
-    }
+    };
 
-    res.status(200).json(eventData);
+    res.render('userProfile', {
+      ...req.body,
+      logged_in: true
+    });
+
+    // res.status(200).json(eventData);
   } catch (err) {
     res.status(500).json(err);
   }

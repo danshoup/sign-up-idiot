@@ -43,41 +43,100 @@
     <main class="container container-fluid mt-5">
 
       <!-- Render the sub layout -->
-      <div class="container">
-        <img src="../public/images/volunteer.png" class="img-fluid mb-5" alt="Responsive image">
+  <img src="../public/images/volunteer.png" class="img-fluid mb-5" alt="Responsive image">
+
+    <div class="card text-center mb-3 w-auto">
+      <div class="card-body">
+        <a href="/event/{{id}}"><h4 class="card-title text-uppercase font-weight-bold">{{event_name}}</h4></a>
+        <hr>
+        <p class="card-text font-italic">To volunteer click on the desired volunteer position below.</p>
       </div>
+      <div class="list-group">
+          {{#each task as |task|}}
+          {{> task-details}}
+          {{/each}}
+      </div>
+    </div>
 
-<div class="container">
-  <div class="row align-items-start">
-    
-            <div class="card text-center" style="width: 18rem;">
-              <div class="card-body">
-                <a href="/event/{{id}}"><h4 class="card-title text-uppercase font-weight-bold">{{event_name}}</h4></a>
-                <hr>
-                <p class="card-text font-italic">To volunteer click on the desired volunteer position below.</p>
-              </div>
-              <div class="list-group">
-                  {{#each task as |task|}}
-                  {{> task-details}}
-                  {{/each}}
-              </div>
+    <div class="card text-center mb-3">
+      <div class="card-body">
+        <a href="/event/{{id}}"><h4 class="card-title text-uppercase font-weight-bold">{{event_name}}</h4></a>
+        <hr>
+        <p class="card-text font-italic">To volunteer click on the desired volunteer position below.</p>
+      </div>
+      <div class="list-group">
+          {{#each task as |task|}}
+          {{> task-details}}
+          {{/each}}
+      </div>
+    </div>
 
-              <div class="card text-center" style="width: 18rem;">
-                <div class="card-body">
-                  <a href="/event/{{id}}"><h4 class="card-title text-uppercase font-weight-bold">{{event_name}}</h4></a>
-                  <hr>
-                  <p class="card-text font-italic">To volunteer click on the desired volunteer position below.</p>
-                </div>
-                <div class="list-group">
-                    {{#each task as |task|}}
-                    {{> task-details}}
-                    {{/each}}
-                </div>
-  
-  <!-- row div -->
-  </div>
-<!-- container div -->
-</div>       
+    <div class="card text-center mb-3 w-100">
+      <div class="card-body">
+        <a href="/event/{{id}}"><h4 class="card-title text-uppercase font-weight-bold">{{event_name}}</h4></a>
+        <hr>
+        <p class="card-text font-italic">To volunteer click on the desired volunteer position below.</p>
+      </div>
+      <div class="list-group">
+          {{#each task as |task|}}
+          {{> task-details}}
+          {{/each}}
+      </div>
+    </div>
+
+    <div class="card text-center mb-3 w-100">
+      <div class="card-body">
+        <a href="/event/{{id}}"><h4 class="card-title text-uppercase font-weight-bold">{{event_name}}</h4></a>
+        <hr>
+        <p class="card-text font-italic">To volunteer click on the desired volunteer position below.</p>
+      </div>
+      <div class="list-group">
+          {{#each task as |task|}}
+          {{> task-details}}
+          {{/each}}
+      </div>
+    </div>
+
+    <div class="card text-center mb-3 w-100">
+      <div class="card-body">
+        <a href="/event/{{id}}"><h4 class="card-title text-uppercase font-weight-bold">{{event_name}}</h4></a>
+        <hr>
+        <p class="card-text font-italic">To volunteer click on the desired volunteer position below.</p>
+      </div>
+      <div class="list-group">
+          {{#each task as |task|}}
+          {{> task-details}}
+          {{/each}}
+      </div>
+    </div>
+
+    <div class="card text-center mb-3 w-100">
+      <div class="card-body">
+        <a href="/event/{{id}}"><h4 class="card-title text-uppercase font-weight-bold">{{event_name}}</h4></a>
+        <hr>
+        <p class="card-text font-italic">To volunteer click on the desired volunteer position below.</p>
+      </div>
+      <div class="list-group">
+          {{#each task as |task|}}
+          {{> task-details}}
+          {{/each}}
+      </div>
+    </div>
+
+    <div class="card text-center mb-3 w-100">
+      <div class="card-body">
+        <a href="/event/{{id}}"><h4 class="card-title text-uppercase font-weight-bold">{{event_name}}</h4></a>
+        <hr>
+        <p class="card-text font-italic">To volunteer click on the desired volunteer position below.</p>
+      </div>
+      <div class="list-group">
+          {{#each task as |task|}}
+          {{> task-details}}
+          {{/each}}
+      </div>
+    </div>
+
+
   
      </main>
 
