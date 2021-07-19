@@ -32,7 +32,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/newEvent', async (req, res) => {
+router.get('/newEvent', withAuth, async (req, res) => {
   try {
     // Get all events and JOIN with user data
     // const eventData = await Event.findAll({
@@ -61,7 +61,7 @@ router.get('/newEvent', async (req, res) => {
   }
 });
 
-router.get('/editEvent/:id', async (req, res) => {
+router.get('/editEvent/:id', withAuth, async (req, res) => {
   try {
     // Get all events and JOIN with user data
     const eventData = await Event.findByPk(req.params.id, {
