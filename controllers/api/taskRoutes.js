@@ -15,6 +15,22 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+router.put('/:id', withAuth, async (req, res) => {
+  try {
+    const newTask = await Task.update({
+      volunteer: req.session.user_id
+    },
+    {where: {
+      id: req.params.id
+    }
+  });
+  console.log(`Task = ${req.params.id}, Volunteer = ${req.session.user_id}`);
+    res.status(200).json(newTask);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 // router.get()
 
 // router.put()
