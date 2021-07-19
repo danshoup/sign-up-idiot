@@ -9,7 +9,7 @@ const editProfileFormHandler = async (event) => {
   
     if (first_name && last_name && email && (password === password_confirm)) {
       const response = await fetch('/api/users', {
-        method: 'post',
+        method: 'put',
         body: JSON.stringify({
           first_name,
           last_name,
@@ -18,7 +18,7 @@ const editProfileFormHandler = async (event) => {
         }),
         headers: { 'Content-Type': 'application/json' }
       });
-  
+        
       // check the response status
       if (response.ok) {
         console.log('success');
@@ -26,7 +26,27 @@ const editProfileFormHandler = async (event) => {
       } else {
         alert(response.statusText);
       }
+    } else {
+      if (first_name && last_name && email) {
+        const response = await fetch('/api/users', {
+          method: 'put',
+          body: JSON.stringify({
+            first_name,
+            last_name,
+            email
+          }),
+          headers: { 'Content-Type': 'application/json' }
+        });
+          
+        // check the response status
+        if (response.ok) {
+          console.log('success');
+          document.location.replace('/userProfile');
+        } else {
+          alert(response.statusText);
+        }
     }
 }
+}
   
-document.querySelector('.edit-profile-btn').addEventListener('submit', editProfileFormHandler);
+document.querySelector('.edit-profile-form').addEventListener('submit', editProfileFormHandler);
