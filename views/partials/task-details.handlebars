@@ -1,12 +1,17 @@
 
-<a href="/event/{{event_id}}" class="list-group-item list-group-item-action">
+<div data-task="{{id}}" data-event="{{event_id}}" class=" task-signup-btn list-group-item list-group-item-action">
 Task: {{name}} </br>
 Assigned to: 
 {{#if volunteer}}
     {{task_volunteer.first_name}} {{task_volunteer.last_name}}
 {{else}}
     Slot Available!
+<<<<<<< HEAD
     <p class="font-italic">(Click here to volunteer...)</p>
+=======
+    <p class="cfont-italic">(Click here to volunteer for this task...)</p>
+
+>>>>>>> 37d7ccfb09c6370bf6eb8b13b09d2a7fea60a88e
 {{/if}}
-</a>
+</div>
 

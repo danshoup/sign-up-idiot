@@ -97,6 +97,7 @@
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+  }
 
   /* footer */
 
@@ -105,6 +106,16 @@
   } */
 
   /* FA icons */
+
+  /* Jon's advised css */
+  .fa-calendar {
+    font-size: 15pt;
+  } 
+​
+  .input-group {
+    width: 180px;
+    margin-top: 30px;
+  }
  
 
   /* .icon i{
