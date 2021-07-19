@@ -6,7 +6,7 @@ https://danshoup.github.io/sign-up-idiot
 (jnsert final screenshot of page?)
 
 # Live Link
-https://dashboard.heroku.com/apps/
+https://hidden-earth-06071.herokuapp.com/
 
 # Description
 Sign Up, Idiot! gives users the opportunity to create events, manage events, and sign up for events all from one profile. The user dashboard displays all of those components while also providing you with a history of your events. The website's functionality is simplistic enough so even the "idiots" of the world can easily volunteer and create events. 
