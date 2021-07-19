@@ -97,6 +97,7 @@
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+  }
 
   /* footer */
 
@@ -107,9 +108,9 @@
   /* FA icons */
 
   /* Jon's advised css */
-  .glyphicon-calendar {
+  .fa-calendar {
     font-size: 15pt;
-  }
+  } 
 ​
   .input-group {
     width: 180px;
