@@ -1,4 +1,4 @@
- <!-- Event information form -->
+<!-- Event information form -->
   <div class="container d-flex justify-content-center">
     <form class="new-event-form">
         <div class="row" style="margin-bottom: 30px;">
@@ -91,17 +91,17 @@
             <input type="text" class="form-control" id="inputZip">
           </div>
         </div>
-
+​
         {{!-- date-picker --}}
-        
+
       <div class="input-group mb-3">
-        <input placeholder="Select start date" id="eventStart" type="text" class="form-control date-input" />
+        <input placeholder="Select start date" data-provide="datepicker" id="eventStart" type="text" class="form-control date-input" />
         <label class="input-group-btn" for="eventStart">
              <span class="btn btn-default">
             <i= class="fa fa-calendar"></i>
             </span>
         </label>
-         <input placeholder="Select end date" id="eventEnd" type="text" class="form-control datepicker" />
+         <input placeholder="Select end date" data-provide="datepicker" id="eventEnd" type="text" class="form-control datepicker" />
         <label class="input-group-btn" for="eventEnd">
             <span class="btn btn-default">
             <i= class="fa fa-calendar"></i>
@@ -111,12 +111,14 @@
       </div>
     </div>
   </div>
-        </div>
-        <!-- 'Create Event button' -->
-      <div class="container d-flex justify-content-center">
-        <button type="submit" class="btn-lg btn-primary mt-5">Create Event</button>
-      </div>
+</div>
+      
+      <!-- 'Create Event button' -->
+    <div class="container d-flex justify-content-center">
+      <button type="submit" class="btn-lg btn-primary mt-5">Create Event</button>
+    </div>
     </form>            
 </div>
-
+​
 <script src="/js/addEvent.js"></script>
+
