@@ -76,6 +76,7 @@ router.get('/editEvent/:id', async (req, res) => {
     });
 
     // Serialize data so the template can read it
+
     const event = eventData.get({ plain: true });
 
     // Pass serialized data and session flag into template
@@ -86,10 +87,12 @@ router.get('/editEvent/:id', async (req, res) => {
 
     // res.status(200).json(event);
 
+
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
 
 router.get('/events', withAuth, async (req, res) => {
   try {
