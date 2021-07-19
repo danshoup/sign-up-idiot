@@ -56,8 +56,10 @@
                     <a href="/event/{{event.id}}"><td>{{event.event_name}}</td></a>
                     <td>{{format_date event.event_start_date}}</td>
                     <td>
-                      <a class="edit-event-btn" data-event="{{event.id}}" href="/editEvent/{{event.id}}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                      <a class="delete-event-btn" data-event="{{event.id}}" href="/api/events/deleteEvent/{{event.id}}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+
+                      <a class="editEvent" id="edit{{event.id}}" href=""><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                      <button type="button" class="btn btn-link ml-1 deleteEvent" id="delete{{event.id}}" href=""><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+
                     </td>
                   </tr>
                   {{/each}}
