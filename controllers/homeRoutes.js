@@ -76,14 +76,17 @@ router.get('/editEvent/:id', async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    const events = eventData.map((event) => event.get({ plain: true }));
+
+    const event = eventData.get({ plain: true });
 
     // Pass serialized data and session flag into template
-    res.render('editEvent', {...eventData, 
-      logged_in: req.session.logged_in 
+    res.render('editEvent', {
+      ...event, 
+      logged_in: true 
     });
 
-    // res.status(200).json(events);
+    // res.status(200).json(event);
+
 
   } catch (err) {
     res.status(500).json(err);
@@ -146,7 +149,6 @@ router.get('/event/:id', withAuth, async (req, res) => {
 
     res.render('event', {
       ...event,
-
       logged_in: true
     });
 
