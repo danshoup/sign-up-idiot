@@ -103,17 +103,16 @@ router.get('/events', withAuth, async (req, res) => {
           attributes: {
             exclude:['password']},
         },
-        {
-          model: Task,
-        },
+        // {
+        //   model: Task,
+        // },
       ],
     });
 
     const events = eventData.map((event) => event.get({ plain: true }));
 
     res.render('events', {
-      ...events,
-      logged_in: true
+      events,
     });
 
     // res.status(200).json(events);
