@@ -87,7 +87,7 @@
                     <td>{{task.event.event_creator.first_name}} {{task.event.event_creator.last_name}}</td>
                     <td>{{task.name}}</td>
                     <td>
-                      <a class="deleteVolunteerTask" data-task="{{task.event.id}}" href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                      <button type="button" class="btn btn-link ml-1 deleteVolunteerTask" data-task="{{task.event.id}}" href=""><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                     </td>
                     {{/each}}
                   </tr>
