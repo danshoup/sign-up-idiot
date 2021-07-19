@@ -91,20 +91,31 @@
   /* events gallery */
   .events {
     flex: 4;
-    background-color: #var(--teal);
+    background-color: var(--teal);
     padding: 50px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+  }
 
   /* footer */
 
-  .footer-margin {
+  /* .footer-margin {
     height: 100px;
-  }
+  } */
 
   /* FA icons */
+
+  /* Jon's advised css */
+  .fa-calendar {
+    font-size: 15pt;
+  } 
+​
+  .input-group {
+    width: 180px;
+    margin-top: 30px;
+  }
  
 
   .icon i{

@@ -91,23 +91,26 @@
             <input type="text" class="form-control" id="inputZip">
           </div>
         </div>
-        
+
         {{!-- date-picker --}}
-        <div class="form-row mt-3">
-            <div class="form-group col-md-6">
-              <div id="date-picker-start" class="md-form md-outline input-with-post-icon datepicker" inline="true">
-                <input placeholder="Select start date" type="text" id="eventStart" class="form-control">
-                <label for="eventStart">Start Date</label>
-                <i class="fas fa-calendar input-prefix"></i>
-              </div>
+        
+      <div class="input-group mb-3">
+        <input placeholder="Select start date" id="eventStart" type="text" class="form-control date-input" readonly="readonly" />
+        <label class="input-group-btn" for="eventStart">
+             <span class="btn btn-default">
+            <i= class="fa fa-calendar"></i>
+            </span>
+        </label>
+         <input placeholder="Select end date" id="eventEnd" type="text" class="form-control datepicker" readonly="readonly" />
+        <label class="input-group-btn" for="eventEnd">
+            <span class="btn btn-default">
+            <i= class="fa fa-calendar"></i>
+            </span>
+        </label>
         </div>
-            <div class="form-group col-md-6">
-              <div id="date-picker-end" class="md-form md-outline input-with-post-icon datepicker" inline="true">
-                <input placeholder="Select end date" type="text" id="eventEnd" class="form-control">
-                <label for="eventEnd">End Date</label>
-                <i class="fas fa-calendar input-prefix"></i>
-              </div>
-            </div>
+      </div>
+    </div>
+  </div>
         </div>
         <!-- 'Create Event button' -->
       <div class="container d-flex justify-content-center">
