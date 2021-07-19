@@ -32,6 +32,65 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/newEvent', async (req, res) => {
+  try {
+    // Get all events and JOIN with user data
+    // const eventData = await Event.findAll({
+    //   include: [
+    //     {
+    //       model: User, as: 'event_creator',
+    //       attributes: {
+    //         exclude:['password']
+    //       },
+    //     },
+    //   ],
+    // });
+
+    // Serialize data so the template can read it
+    // const events = eventData.map((event) => event.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('newEvent', { 
+      logged_in: req.session.logged_in 
+    });
+
+    // res.status(200).json(events);
+
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/editEvent/:id', async (req, res) => {
+  try {
+    // Get all events and JOIN with user data
+    const eventData = await Event.findByPk(req.params.id, {
+      include: [
+        {
+          model: User, as: 'event_creator',
+          attributes: {
+            exclude:['password']
+          },
+        },
+      ],
+    });
+
+    // Serialize data so the template can read it
+    const event = eventData.get({ plain: true });
+
+    // Pass serialized data and session flag into template
+    res.render('editEvent', {
+      ...event, 
+      logged_in: true 
+    });
+
+    // res.status(200).json(event);
+
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/events', withAuth, async (req, res) => {
   try {
     const eventData = await Event.findAll({
@@ -87,7 +146,6 @@ router.get('/event/:id', withAuth, async (req, res) => {
 
     res.render('event', {
       ...event,
-
       logged_in: true
     });
 
