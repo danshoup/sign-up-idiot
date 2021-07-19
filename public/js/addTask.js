@@ -2,7 +2,7 @@ const newTaskFormHandler = async (event) => {
   event.preventDefault();
   
     const name = document.querySelector('#task-body').value.trim();
-    const event_id = JSON.parse(note.parentElement.getAttribute('data-event-id')).id;
+    const event_id = JSON.parse(task.parentElement.getAttribute('data-event-id')).id;
     // const event_id = window.location.toString().split('/')[
     //   window.location.toString().split('/').length - 1
     // ];

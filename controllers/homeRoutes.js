@@ -87,6 +87,7 @@ router.get('/event/:id', withAuth, async (req, res) => {
 
     res.render('event', {
       ...event,
+
       logged_in: true
     });
 

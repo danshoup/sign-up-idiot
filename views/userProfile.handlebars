@@ -53,11 +53,11 @@
                   {{#each events as |event|}}
                   <tr>
                     <td scope="row">{{event.id}}</td>
-                    <td>{{event.event_name}}</td>
+                    <a href="/event/{{event.id}}"><td>{{event.event_name}}</td></a>
                     <td>{{format_date event.event_start_date}}</td>
                     <td>
-                      <i class="fa fa-pencil" aria-hidden="true"></i>
-                      <i class="fa fa-trash-o" aria-hidden="true"></i>
+                      <a class="editEvent" id="edit{{event.id}}" href=""><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                      <a class="deleteEvent" id="delete{{event.id}}" href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                     </td>
                   </tr>
                   {{/each}}
@@ -85,8 +85,7 @@
                     <td>{{task.event.event_creator.first_name}} {{task.event.event_creator.last_name}}</td>
                     <td>{{task.name}}</td>
                     <td>
-                      <i class="fa fa-pencil" aria-hidden="true"></i>
-                      <i class="fa fa-trash-o" aria-hidden="true"></i>
+                      <a class="deleteVolunteerTask" id="delete{{task.event.id}}" href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                     </td>
                     {{/each}}
                   </tr>
@@ -98,4 +97,3 @@
   
     </div>
 
-    {{!-- <script src="/js/login.js"></script> --}}

@@ -1,9 +1,9 @@
 
 <div class="card text-center" style="width: 18rem;">
     <div class="card-body">
-      <a href="/event/{{id}}"><h4 class="card-title text-uppercase font-weight-bold">{{event_name}}</h4></a>
+      <a href="/event/{{id}}"><h4 data-event_id="{{id}}" class="card-title text-uppercase font-weight-bold">{{event_name}}</h4></a>
       <hr>
-      <p class="card-text font-italic">To volunteer click on the desired volunteer position below.</p>
+      <p class="card-text font-italic">To volunteer click on an available volunteer position below.</p>
     </div>
     <div class="list-group">
         {{#each tasks as |task|}}
