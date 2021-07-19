@@ -1,13 +1,13 @@
     <div class="text-center mt-5">
-      <form class="signup-form" style="max-width:480px; margin:auto;">
-        <img class="mt-4 mb-4" src="SignUp.png" height="100" alt="Sign Up Logo">
+      <form class="edit-profile-form" style="max-width:480px; margin:auto;">
+        {{!-- <img class="mt-4 mb-4" src="SignUp.png" height="100" alt="Sign Up Logo"> --}}
          <h1 class="h3 mb-3 font-weight-normal"></h1>Edit Your Profile</h1>
          <label for="firstName-signup" class="sr-only">First Name:</label>
-         <input type="text" id="firstName-signup" class="form-control mb-3 mb-3" placeholder="First Name">
+         <input type="text" id="firstName-signup" class="form-control mb-3 mb-3" placeholder="First Name" value={{first_name}}>
          <label for="lastName-signup" class="sr-only">Last Name:</label>
-         <input type="text" id="lastName-signup" class="form-control mb-3" placeholder="Last Name">
+         <input type="text" id="lastName-signup" class="form-control mb-3" placeholder="Last Name" value={{last_name}}>
          <label for="email-signup" class="sr-only">Email Address:</label>
-         <input type="email" id="email-signup" class="form-control mb-3" placeholder="Email Address" required autofocus >
+         <input type="email" id="email-signup" class="form-control mb-3" placeholder="Email Address" value={{email}} required autofocus >
          <label for="password-signup" class="sr-only">Password:</label>
          <input type="password" id="password-signup" placeholder="Password" class="form-control mb-3">
          <label for="password-confirm" class="sr-only">Confirm Password:</label>
