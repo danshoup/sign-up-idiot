@@ -25,10 +25,10 @@
             <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
               <ul class="nav navbar-nav  navbar-right" id="navbar-links">
                 <li><a class="nav-link" href="/events">See All Events</a></li>
-                <li><a class="nav-link" href="/newEvent">Create New Event</a></li>
                 {{#if logged_in}}
-                <li><a class="nav-link" id="logout" href="/">Log Out</a></li>
+                <li><a class="nav-link" href="/newEvent">Create New Event</a></li>
                 <li><a class="nav-link" id="profile" href="/userProfile">User Profiile</a></li>
+                <li><a class="nav-link" id="logout" href="/">Log Out</a></li>
                 {{!-- <button class="no-button" id="logout">logout</button> --}}
                 {{else}}
                 <li><a class="nav-link" href="/login">Log In</a></li>
