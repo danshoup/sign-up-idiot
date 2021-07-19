@@ -1,1 +1,11 @@
-<a href="/event/{{event_id}}" class="list-group-item list-group-item-action">{{name}}</a>
+
+<a href="/event/{{event_id}}" class="list-group-item list-group-item-action">
+Task: {{name}} </br>
+Assigned to: 
+{{#if volunteer}}
+    {{task_volunteer.first_name}} {{task_volunteer.last_name}}
+{{else}}
+    Slot Available!
+{{/if}}
+</a>
+
