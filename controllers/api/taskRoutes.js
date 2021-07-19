@@ -21,6 +21,7 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
+    console.log(`Task ID to DELETE is ${req.params.id}`);
     const taskData = await Task.destroy({
       where: {
         id: req.params.id,
@@ -32,7 +33,11 @@ router.delete('/:id', withAuth, async (req, res) => {
       return;
     }
 
-    res.status(200).json(taskData);
+    res.render('userProfile', { 
+      logged_in: true 
+    });
+
+    // res.status(200).json(taskData);
   } catch (err) {
     res.status(500).json(err);
   }

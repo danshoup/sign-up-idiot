@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up, Idiot!</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.25/af-2.3.7/b-1.7.1/kt-2.6.2/r-2.2.9/rr-1.2.8/sc-2.0.4/sp-1.3.0/sl-1.3.3/datatables.min.css"/>
+
+  <link rel="stylesheet" href="../public/css/style.css">
+</head>
+
+<body>
+
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="../public/images/hands.png" width="50" height="50" class="d-inline-block align-center" alt="">
+                Sign Up, Idiot!
+            </a>
+            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
+              <ul class="nav navbar-nav  navbar-right" id="navbar-links">
+                {{#if logged_in}}
+                <li><a href="/userProfile" id="profile">User Profiile</a></li>
+                <button class="no-button" id="logout">logout</button>
+                {{else}}
+                <li><a class="nav-link" href="/login">Log In</a></li>
+                <li><a class="nav-link" href="/signup">Create Account</a></li>
+                {{/if}}
+              </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="container container-fluid mt-5">
+      <!-- Render the sub layout -->
+      <main class="container container-fluid mt-5">
+        <div class="container bootdey flex-grow-1 container-p-y">
+    
+          <div class="media align-items-center py-3 mb-3">
+            <img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="" class="d-block ui-w-100 rounded-circle">
+            <div class="media-body ml-4">
+              <h4 class="font-weight-bold mb-0">Joe Volunteer</h4>
+              <br>
+              <a href="javascript:void(0)" class="btn btn-primary btn-sm">Edit Profile</a>&nbsp;
+              <a href="javascript:void(0)" class="btn btn-default btn-sm icon-btn"><i class="fa fa-mail"></i></a>
+            </div>
+          </div>
+    
+    
+          <div class="card">
+            <hr class="border-light m-0">
+            <div class="card-body">
+    
+              <h6 class="mt-4 mb-3">User Profile:</h6>
+    
+              <table class="table user-view-table m-0">
+                <thead>
+                  <tr>
+                    <th scope="col">User ID:</th>
+                    <th scope="col">First Name:</th>
+                    <th scope="col">Last Name:</th>
+                    <th scope="col">Email:</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Joe</td>
+                    <td>Volunteer</td>
+                    <td>joe@volunteer.com</td>
+                  </tr>
+                </tbody>
+              </table>
+    
+    
+              <h6 class="mt-4 mb-3">Projects Created:</h6>
+    
+              <table class="table user-view-table m-0" id="eventTable">
+                <thead>
+                  <tr>
+                    <th scope="col">Project ID:</th>
+                    <th scope="col">Project Name:</th>
+                    <th scope="col">Description:</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <a href="/">
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Red Cross</td>
+                    <td>Blood Drive</td>
+                    <td>
+                      <a class="mr-1" href=""><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                      <a class="ml-1" href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                    </td>
+                  </tr>
+                </a>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Card Games</td>
+                    <td>Euchre Tournament</td>
+                    <td>
+                      <a class="mr-1" href=""><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                      <a class="ml-1" href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Block Party</td>
+                    <td>Community Pot Luck</td>
+                    <td>
+                      <a class="mr-1" href=""><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                      <a class="ml-1" href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+    
+              <h6 class="mt-4 mb-3">Volunteer History:</h6>
+    
+              <table class="table user-view-table m-0">
+                <thead>
+                  <tr>
+                    <th scope="col">Project ID:</th>
+                    <th scope="col">Project Name:</th>
+                    <th scope="col">Description:</th>
+                    <th scope="col">Volunteer Role:</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Hootenany</td>
+                    <td>Community Concert</td>
+                    <td>Site Security</td>
+                    <td>
+                      <a class="mr-1" href=""><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                      <button type="button" class="btn btn-link ml-1" href=""><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+    
+            </div>
+          </div>
+    
+        </div>
+        
+        <script src="/js/login.js"></script>
+
+    </main>
+
+    <div class="footer-margin fixed-bottom">
+        <footer class="container-fluid card-footer footer-position text-center">
+                <p>&copy; Copyright 2021 Sign Up, Idiot!</p>
+        </footer>
+    </div>
+
+    <!-- Render script for logged in users only -->
+      {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+      {{/if}}
+      
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.25/af-2.3.7/b-1.7.1/kt-2.6.2/r-2.2.9/rr-1.2.8/sc-2.0.4/sp-1.3.0/sl-1.3.3/datatables.min.js"></script>
+ 
+  </body>
+</html>
+
+

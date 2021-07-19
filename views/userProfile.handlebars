@@ -5,9 +5,9 @@
         <img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="" class="d-block ui-w-100 rounded-circle">
         <div class="media-body ml-4">
           <h4 class="font-weight-bold mb-0">{{first_name}} {{last_name}}</h4>
-          <br>
-          <a href="javascript:void(0)" class="btn btn-primary btn-sm">Edit Profile</a>&nbsp;
-          <a href="javascript:void(0)" class="btn btn-default btn-sm icon-btn"><i class="fa fa-mail"></i></a>
+          {{!-- <br>
+          <a href="/api/users/editProfile" class="edit-profile-btn btn btn-primary btn-sm">Edit Profile</a>&nbsp;
+          <a href="javascript:void(0)" class="btn btn-default btn-sm icon-btn"><i class="fa fa-mail"></i></a> --}}
         </div>
       </div>
 
@@ -53,11 +53,13 @@
                   {{#each events as |event|}}
                   <tr>
                     <td scope="row">{{event.id}}</td>
-                    <td>{{event.event_name}}</td>
+                    <a href="/event/{{event.id}}"><td>{{event.event_name}}</td></a>
                     <td>{{format_date event.event_start_date}}</td>
                     <td>
-                      <i class="fa fa-pencil" aria-hidden="true"></i>
-                      <i class="fa fa-trash-o" aria-hidden="true"></i>
+
+                      <a class="editEvent" data-event="{{event.id}}" href="/editEvent/{{event.id}}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                      <button type="button" class="deleteEvent btn btn-link ml-1" data-event="{{event.id}}"><i class="fa fa-trash-o" ></i></button>
+
                     </td>
                   </tr>
                   {{/each}}
@@ -82,11 +84,10 @@
                   <tr>
                     <td scope="row">{{task.event.id}}</td>
                     <td>{{task.event.event_name}}</td>
-                    <td>{{task.event.user.first_name}} {{task.event.user.last_name}}</td>
+                    <td>{{task.event.event_creator.first_name}} {{task.event.event_creator.last_name}}</td>
                     <td>{{task.name}}</td>
                     <td>
-                      <i class="fa fa-pencil" aria-hidden="true"></i>
-                      <i class="fa fa-trash-o" aria-hidden="true"></i>
+                      <button type="button" class="btn btn-link ml-1 deleteVolunteerTask" data-task="{{task.id}}"><i class="fa fa-trash-o"></i></button>
                     </td>
                     {{/each}}
                   </tr>
@@ -97,5 +98,4 @@
       </div>
   
     </div>
-
-    {{!-- <script src="/js/login.js"></script> --}}
+<script src="/js/deleteEvent.js"></script>

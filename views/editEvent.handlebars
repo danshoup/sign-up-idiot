@@ -1,93 +1,93 @@
       <!-- Event information form -->
       <div class="container d-flex justify-content-center">
-        <form class="new-event-form">
+        <form class="edit-event-form" id="edit-event-form">
             <div class="row" style="margin-bottom: 30px;">
                 <div class="twelve columns" style="text-align: center;">
-                <h2>Create an Event</h2>
-                <p>Your first steps to creating your event begin with these few questions. You'll be on your way to securing new volunteers in no time!</p>
+                <h2>Update Your Event</h2>
+                <p>Please edit the values below that need updating.</p>
                 </div>
             </div>
         
             <div class="form-row">
               <div class="form-group col-md-12">
                 <label for="inputEventName">Event Name</label>
-                <input type="text" class="form-control" id="inputEventName">
+                <input type="text" class="form-control" id="inputEventName" value="{{event_name}}">
               </div>
             </div>
             <div class="form-group">
               <label for="inputAddress">Address</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" value="{{event_address_line1}}">
             </div>
             <div class="form-group">
               <label for="inputAddress2">Address 2</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" value="{{event_address_line2}}">
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity">
+                <input type="text" class="form-control" id="inputCity" value="{{event_address_city}}">
               </div>
               <div class="form-group col-md-4">
                 <label for="inputState">State</label>
                 <select id="inputState" class="form-control">
                   <option selected>Choose...</option>
-                  <option value="AK">Alaska</option>
-                  <option value="AL">Alabama</option>
-                  <option value="AR">Arkansas</option>
-                  <option value="AZ">Arizona</option>
-                  <option value="CA">California</option>
-                  <option value="CO">Colorado</option>
-                  <option value="CT">Connecticut</option>
-                  <option value="DC">District of Columbia</option>
-                  <option value="DE">Delaware</option>
-                  <option value="FL">Florida</option>
-                  <option value="GA">Georgia</option>
-                  <option value="HI">Hawaii</option>
-                  <option value="IA">Iowa</option>
-                  <option value="ID">Idaho</option>
-                  <option value="IL">Illinois</option>
-                  <option value="IN">Indiana</option>
-                  <option value="KS">Kansas</option>
-                  <option value="KY">Kentucky</option>
-                  <option value="LA">Louisiana</option>
-                  <option value="MA">Massachusetts</option>
-                  <option value="MD">Maryland</option>
-                  <option value="ME">Maine</option>
-                  <option value="MI">Michigan</option>
-                  <option value="MN">Minnesota</option>
-                  <option value="MO">Missouri</option>
-                  <option value="MS">Mississippi</option>
-                  <option value="MT">Montana</option>
-                  <option value="NC">North Carolina</option>
-                  <option value="ND">North Dakota</option>
-                  <option value="NE">Nebraska</option>
-                  <option value="NH">New Hampshire</option>
-                  <option value="NJ">New Jersey</option>
-                  <option value="NM">New Mexico</option>
-                  <option value="NV">Nevada</option>
-                  <option value="NY">New York</option>
-                  <option value="OH">Ohio</option>
-                  <option value="OK">Oklahoma</option>
-                  <option value="OR">Oregon</option>
-                  <option value="PA">Pennsylvania</option>
-                  <option value="PR">Puerto Rico</option>
-                  <option value="RI">Rhode Island</option>
-                  <option value="SC">South Carolina</option>
-                  <option value="SD">South Dakota</option>
-                  <option value="TN">Tennessee</option>
-                  <option value="TX">Texas</option>
-                  <option value="UT">Utah</option>
-                  <option value="VA">Virginia</option>
-                  <option value="VT">Vermont</option>
-                  <option value="WA">Washington</option>
-                  <option value="WI">Wisconsin</option>
-                  <option value="WV">West Virginia</option>
-                  <option value="WY">Wyoming</option> 
+                  <option value="AK" {{#ifEquals event_address_state "AK"}}selected{{/ifEquals}}>Alaska</option>
+                  <option value="AL" {{#ifEquals event_address_state "AL"}}selected{{/ifEquals}}>Alabama</option>
+                  <option value="AR" {{#ifEquals event_address_state "AR"}}selected{{/ifEquals}}>Arkansas</option>
+                  <option value="AZ" {{#ifEquals event_address_state "AZ"}}selected{{/ifEquals}}>Arizona</option>
+                  <option value="CA" {{#ifEquals event_address_state "CA"}}selected{{/ifEquals}}>California</option>
+                  <option value="CO" {{#ifEquals event_address_state "Co"}}selected{{/ifEquals}}>Colorado</option>
+                  <option value="CT" {{#ifEquals event_address_state "CT"}}selected{{/ifEquals}}>Connecticut</option>
+                  <option value="DC" {{#ifEquals event_address_state "DC"}}selected{{/ifEquals}}>District of Columbia</option>
+                  <option value="DE" {{#ifEquals event_address_state "DE"}}selected{{/ifEquals}}>Delaware</option>
+                  <option value="FL" {{#ifEquals event_address_state "FL"}}selected{{/ifEquals}}>Florida</option>
+                  <option value="GA" {{#ifEquals event_address_state "GA"}}selected{{/ifEquals}}>Georgia</option>
+                  <option value="HI" {{#ifEquals event_address_state "HI"}}selected{{/ifEquals}}>Hawaii</option>
+                  <option value="IA" {{#ifEquals event_address_state "IA"}}selected{{/ifEquals}}>Iowa</option>
+                  <option value="ID" {{#ifEquals event_address_state "ID"}}selected{{/ifEquals}}>Idaho</option>
+                  <option value="IL" {{#ifEquals event_address_state "IL"}}selected{{/ifEquals}}>Illinois</option>
+                  <option value="IN" {{#ifEquals event_address_state "IN"}}selected{{/ifEquals}}>Indiana</option>
+                  <option value="KS" {{#ifEquals event_address_state "KS"}}selected{{/ifEquals}}>Kansas</option>
+                  <option value="KY" {{#ifEquals event_address_state "KY"}}selected{{/ifEquals}}>Kentucky</option>
+                  <option value="LA" {{#ifEquals event_address_state "LA"}}selected{{/ifEquals}}>Louisiana</option>
+                  <option value="MA" {{#ifEquals event_address_state "MA"}}selected{{/ifEquals}}>Massachusetts</option>
+                  <option value="MD" {{#ifEquals event_address_state "MD"}}selected{{/ifEquals}}>Maryland</option>
+                  <option value="ME" {{#ifEquals event_address_state "ME"}}selected{{/ifEquals}}>Maine</option>
+                  <option value="MI" {{#ifEquals event_address_state "MI"}}selected{{/ifEquals}}>Michigan</option>
+                  <option value="MN" {{#ifEquals event_address_state "MN"}}selected{{/ifEquals}}>Minnesota</option>
+                  <option value="MO" {{#ifEquals event_address_state "MO"}}selected{{/ifEquals}}>Missouri</option>
+                  <option value="MS" {{#ifEquals event_address_state "MS"}}selected{{/ifEquals}}>Mississippi</option>
+                  <option value="MT" {{#ifEquals event_address_state "MT"}}selected{{/ifEquals}}>Montana</option>
+                  <option value="NC" {{#ifEquals event_address_state "NC"}}selected{{/ifEquals}}>North Carolina</option>
+                  <option value="ND" {{#ifEquals event_address_state "ND"}}selected{{/ifEquals}}>North Dakota</option>
+                  <option value="NE" {{#ifEquals event_address_state "NE"}}selected{{/ifEquals}}>Nebraska</option>
+                  <option value="NH" {{#ifEquals event_address_state "NH"}}selected{{/ifEquals}}>New Hampshire</option>
+                  <option value="NJ" {{#ifEquals event_address_state "NJ"}}selected{{/ifEquals}}>New Jersey</option>
+                  <option value="NM" {{#ifEquals event_address_state "NM"}}selected{{/ifEquals}}>New Mexico</option>
+                  <option value="NV" {{#ifEquals event_address_state "NV"}}selected{{/ifEquals}}>Nevada</option>
+                  <option value="NY" {{#ifEquals event_address_state "NY"}}selected{{/ifEquals}}>New York</option>
+                  <option value="OH" {{#ifEquals event_address_state "OH"}}selected{{/ifEquals}}>Ohio</option>
+                  <option value="OK" {{#ifEquals event_address_state "OK"}}selected{{/ifEquals}}>Oklahoma</option>
+                  <option value="OR" {{#ifEquals event_address_state "OR"}}selected{{/ifEquals}}>Oregon</option>
+                  <option value="PA" {{#ifEquals event_address_state "PA"}}selected{{/ifEquals}}>Pennsylvania</option>
+                  <option value="PR" {{#ifEquals event_address_state "PR"}}selected{{/ifEquals}}>Puerto Rico</option>
+                  <option value="RI" {{#ifEquals event_address_state "RI"}}selected{{/ifEquals}}>Rhode Island</option>
+                  <option value="SC" {{#ifEquals event_address_state "SC"}}selected{{/ifEquals}}>South Carolina</option>
+                  <option value="SD" {{#ifEquals event_address_state "SD"}}selected{{/ifEquals}}>South Dakota</option>
+                  <option value="TN" {{#ifEquals event_address_state "TN"}}selected{{/ifEquals}}>Tennessee</option>
+                  <option value="TX" {{#ifEquals event_address_state "TX"}}selected{{/ifEquals}}>Texas</option>
+                  <option value="UT" {{#ifEquals event_address_state "UT"}}selected{{/ifEquals}}>Utah</option>
+                  <option value="VA" {{#ifEquals event_address_state "VA"}}selected{{/ifEquals}}>Virginia</option>
+                  <option value="VT" {{#ifEquals event_address_state "VT"}}selected{{/ifEquals}}>Vermont</option>
+                  <option value="WA" {{#ifEquals event_address_state "WA"}}selected{{/ifEquals}}>Washington</option>
+                  <option value="WI" {{#ifEquals event_address_state "WI"}}selected{{/ifEquals}}>Wisconsin</option>
+                  <option value="WV" {{#ifEquals event_address_state "WV"}}selected{{/ifEquals}}>West Virginia</option>
+                  <option value="WY" {{#ifEquals event_address_state "WY"}}selected{{/ifEquals}}>Wyoming</option> 
                 </select>
               </div>
               <div class="form-group col-md-2">
                 <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
+                <input type="text" class="form-control" id="inputZip" value="{{event_address_zip}}">
               </div>
             </div>
             
@@ -95,14 +95,14 @@
                 <div class="form-group col-md-6">
                     <div id="date-picker-start" class="icon md-form md-outline input-with-post-icon datepicker">
                         <label for="eventStart">Event Start Date...</label>
-                        <input placeholder="Select start date" type="text" id="eventStart" class="form-control">
+                        <input placeholder="Select start date" type="text" id="eventStart" class="form-control" value="{{format_date event_start_date}}">
                         <i class="fa fa-calendar input-prefix" tabindex=0></i>
                       </div>
                 </div>
                 <div class="form-group col-md-6">
                     <div id="date-picker-end" class="icon md-form md-outline input-with-post-icon datepicker">
                         <label for="eventEnd">Event End Date...</label>
-                        <input placeholder="Select end date" type="text" id="eventEnd" class="form-control">
+                        <input placeholder="Select end date" type="text" id="eventEnd" class="form-control" value="{{format_date event_end_date}}">
                         <i class="fa fa-calendar input-prefix" tabindex=0></i>
                       </div>
                 </div>
@@ -113,9 +113,9 @@
 
     <!-- Add event tasks -->
     {{> add-task}}
-    <!-- 'Create Event button' -->
+    <!-- 'Edit Event button' -->
     <div class="container d-flex justify-content-center">
-      <button type="submit" class="btn-lg btn-primary mt-5">Save Changes</button>
+      <button type="submit" form="edit-event-form" class="edit-event-btn  btn-lg btn-primary mt-5" data-event="{{id}}">Save Changes</button>
     </div>
 
-<script src="/js/login.js"></script>
+<script src="/js/editEvent.js"></script>

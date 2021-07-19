@@ -8,11 +8,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  {{!-- <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css' media="screen" /> --}}
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" type="text/css" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
   
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../public/css/style.css">
 </head>
 
 <body>
@@ -26,41 +24,39 @@
             </a>
             <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
               <ul class="nav navbar-nav  navbar-right" id="navbar-links">
-                <li><a class="nav-link" href="/events">See All Events</a></li>
+                <li><a class="nav-link" href="/event">See All Events</a></li>
                 <li><a class="nav-link" href="/newEvent">Create New Event</a></li>
-                {{#if logged_in}}
-                <li><a class="nav-link" id="logout" href="/">Log Out</a></li>
-                <li><a class="nav-link" id="profile" href="/userProfile">User Profiile</a></li>
-                {{!-- <button class="no-button" id="logout">logout</button> --}}
-                {{else}}
-                <li><a class="nav-link" href="/login">Log In</a></li>
-                <li><a class="nav-link" href="/signup">Create Account</a></li>
-                {{/if}}
               </ul>
             </div>
         </div>
     </nav>
 
 
-    <main class="container container-fluid mt-5">
+    <main class="container container-fluid mt-5 ">
 
       <!-- Render the sub layout -->
-      {{{ body }}}
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Many Hands Make Light Work...</h1>
+
+          </div>
+      </div>
+      <section class="flex-row justify-center">
+   
+      </section>
+
+    
     </main>
 
+    <footer class="container-fluid card-footer footer-position text-center">
+            <p>&copy; 2021: Sign Up, Idiot!</p>
+    </footer>
 
 
-    <!-- Render script for logged in users only -->
-      {{#if logged_in}}
-      <script src="/js/logout.js"></script>
-      {{/if}}
       
 
 
-    {{!-- <script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script> --}}
-    {{!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script> --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
 </html>
