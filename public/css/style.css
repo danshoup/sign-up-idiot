@@ -91,7 +91,7 @@
   /* events gallery */
   .events {
     flex: 4;
-    background-color: #var(--teal);
+    background-color: var(--teal);
     padding: 50px;
     display: flex;
     flex-flow: row wrap;
@@ -100,16 +100,16 @@
 
   /* footer */
 
-  .footer-margin {
+  /* .footer-margin {
     height: 100px;
-  }
+  } */
 
   /* FA icons */
  
 
-  .icon i{
+  /* .icon i{
     position: absolute;
     left: 15px;
     top: 40px;
     color: gray;
-  }
+  } 
