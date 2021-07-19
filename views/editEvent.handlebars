@@ -91,24 +91,24 @@
               </div>
             </div>
             
-            <div class="form-row mt-3">
-                <div class="form-group col-md-6">
-                    <div id="date-picker-start" class="icon md-form md-outline input-with-post-icon datepicker">
-                        <label for="eventStart">Event Start Date...</label>
-                        <input placeholder="Select start date" type="text" id="eventStart" class="form-control" value="{{format_date event_start_date}}">
-                        <i class="fa fa-calendar input-prefix" tabindex=0></i>
-                      </div>
-                </div>
-                <div class="form-group col-md-6">
-                    <div id="date-picker-end" class="icon md-form md-outline input-with-post-icon datepicker">
-                        <label for="eventEnd">Event End Date...</label>
-                        <input placeholder="Select end date" type="text" id="eventEnd" class="form-control" value="{{format_date event_end_date}}">
-                        <i class="fa fa-calendar input-prefix" tabindex=0></i>
-                      </div>
-                </div>
-            </div>
-        </form>            
+            <div class="input-group mb-3">
+        <input placeholder="Select start date" data-provide="datepicker" id="eventStart" type="text" class="form-control date-input" />
+        <label class="input-group-btn" for="eventStart">
+             <span class="btn btn-default">
+            <i= class="fa fa-calendar"></i>
+            </span>
+        </label>
+         <input placeholder="Select end date" data-provide="datepicker" id="eventEnd" type="text" class="form-control datepicker" />
+        <label class="input-group-btn" for="eventEnd">
+            <span class="btn btn-default">
+            <i= class="fa fa-calendar"></i>
+            </span>
+        </label>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
 
 
     <!-- Add event tasks -->
