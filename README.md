@@ -25,7 +25,7 @@ Sign Up, Idiot! gives users the opportunity to create events, manage events, and
 * Designing a unique logo
 * NPM package to import excel file
 * Creating a table with Volunteer Work data submitted from users
-*Calendar
+* Calendar
 
 # Contributors
 * Barry St. Pierre
