@@ -1,11 +1,10 @@
 const deleteEventFormHandler = async (event) => {
   event.preventDefault();
     
-    const id = window.location.toString().split('/')[
-        window.location.toString().split('/').length - 1
-      ];
+  const event_id_data = document.querySelector('.delete-event-btn');
+    const id = event_id_data.dataset.event;
 
-    const response = await fetch(`/api/posts/${id}`, {
+    const response = await fetch(`/api/events/${id}`, {
         method: 'DELETE',
         body: JSON.stringify({
           event_id: id
