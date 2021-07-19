@@ -32,3 +32,4 @@ Sign Up, Idiot! gives users the opportunity to create events, manage events, and
 * Diana Dahglas
 * Daniel Shoup
 * Lauren Marcinek
+ 
