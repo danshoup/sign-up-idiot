@@ -1,7 +1,7 @@
 # Sign Up, Idiot!
 A website for everyone, not just the geniuses! Sign Up, Idiot! makes signing up for volunteer events in your area simple and quick. 
 
-https://danshoup.github.io/sign-up-idiot
+https://github.com/danshoup/sign-up-idiot
 
 ![image of deployed site](public/images/sign_up.png)
 
