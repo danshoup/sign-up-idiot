@@ -2,7 +2,7 @@
       <div class="container d-flex justify-content-center">
         <form class="edit-event-form" id="edit-event-form">
             <div class="row" style="margin-bottom: 30px;">
-                <div class="twelve columns" style="text-align: center;">
+                <div class="container text-center">
                 <h2>Update Your Event</h2>
                 <p>Please edit the values below that need updating.</p>
                 </div>
@@ -92,23 +92,20 @@
             </div>
             
             <div class="input-group mb-3">
-        <input placeholder="Select start date" data-provide="datepicker" id="eventStart" type="text" class="form-control date-input" />
-        <label class="input-group-btn" for="eventStart">
-             <span class="btn btn-default">
-            <i= class="fa fa-calendar"></i>
-            </span>
-        </label>
-         <input placeholder="Select end date" data-provide="datepicker" id="eventEnd" type="text" class="form-control datepicker" />
-        <label class="input-group-btn" for="eventEnd">
-            <span class="btn btn-default">
-            <i= class="fa fa-calendar"></i>
-            </span>
-        </label>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+              <input placeholder="Select start date" data-provide="datepicker" id="eventStart" type="text" class="form-control date-input" />
+              <label class="input-group-btn mr-1" for="eventStart">
+                <span class="btn btn-info">
+                  <i class="fa fa-calendar"></i>
+                </span>
+              </label>
+
+              <input placeholder="Select end date" data-provide="datepicker" id="eventEnd" type="text" class="form-control datepicker" />
+              <label class="input-group-btn" for="eventEnd">
+                <span class="btn btn-info">
+                  <i class="fa fa-calendar"></i>
+                </span>
+              </label>
+            </div>
 
 
     <!-- Add event tasks -->
