@@ -3,19 +3,18 @@
     <div class="card-body">
       <a href="/event/{{id}}"><h3 data-event_id="{{id}}" class="card-title text-uppercase font-weight-bold">{{event_name}}</h3></a>
       <hr>
-<<<<<<< HEAD
-      
-=======
       Hosted by {{event_creator.first_name}} {{event_creator.last_name}} (<a href="mailto:{{event_creator.email}}?subject={{event_name}}">{{event_creator.email}}</a>)<br /> Located in {{event_address_city}}, {{event_address_state}}<br />
-      <p class="card-text font-italic">To volunteer click on an available position below...</p>
->>>>>>> 37d7ccfb09c6370bf6eb8b13b09d2a7fea60a88e
-    </div>
-    <div class="list-group">
-        {{#each tasks as |task|}}
-        {{> task-details}}
-        {{/each}}
+      <p class="card-text font-italic">Click the event name or email the host for more info...</p>
     </div>
 </div>
+
+{{#each tasks as |task|}}
+<div class="text-center m-3">
+  <div class="list-group">
+        {{> task-details}}
+  </div>
+</div>
+{{/each}}
 
 <script src="/js/editTask.js"></script>
 
